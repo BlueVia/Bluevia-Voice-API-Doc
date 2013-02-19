@@ -124,16 +124,17 @@ em {
           <li class="active"></li>
         </ul>
 
-        <h3 id="call-leg">Call Leg</h3>
+        <h2 id="call-leg">Call Leg</h2>
 
 <pre><code> /comms/v1/calls/{callId}/legs/{legId}{format}?QueryParams
 </code></pre>
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="postmethod" data-toggle="collapse" data-target="#postdoc">
     <dt>POST</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
+  <!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
@@ -144,7 +145,7 @@ em {
   * This allows you to request specific information about the call leg represented by the {legId}</dd>
   </dl>
 
-  <p class="apimethod" id="postmethod" data-toggle="collapse" data-target="#postdoc"><i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available --></p>
+  <p class="apimethod" id="postmethod" data-toggle="collapse" data-target="#getdoc"><i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available --></p>
   <!-- This HTML doesn't need changes -->
   <div class="apidoc collapse in tabable offset1" id="postdoc">
     <ul class="nav nav-tabs">
@@ -191,6 +192,7 @@ em {
 
       </div>
 <div id="tab2" class="tab-pane">
+
         <ul>
           <li>
             <p>Successful response</p>
@@ -202,43 +204,41 @@ em {
               <dd>
                 <dl>
                   <dt>Body</dt>
-                  <dd>
-                    <dl>
-                      <dt>The response includes a JSON or an XML body</dt>
-                      <dd>
-                        <dl>
-                          <dt>JSON (example</dt>
-                          <dd>@todo validate this</dd>
-                        </dl>
-
-                        <p>~~~
-      {
-          “callLegId”:
-      “328482ac-e3a2-4152-8b67-18ba0c84ef33”,
-  						“callerId”: “tel: +34666666669”,
-          “destination”: “tel: +34666666666”,
-          “legStatus”: “Answered”,
-          	“direction”: “Outbound”,
-          “duration”: “110”,
-          “callLegCost”: {
-         		“amount”: 6.33,
- 	 					},
-          “createdAt”: “2012-05-16T14:00:10”,
-          “lastUpdated”: “2012-05-16T14:02:00”,
- 					}</p>
-                      </dd>
-                    </dl>
-                  </dd>
+                  <dd>The response includes a JSON or an XML body</dd>
                 </dl>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>Example</dt>
+              <dd><strong>JSON</strong>
+
+                <p>~~~
+    {</p>
+
+                <pre><code>                "callLegId":
+            "328482ac-e3a2-4152-8b67-18ba0c84ef33",
+					"callerId": "tel: +34666666669",
+                "destination": "tel: +34666666666",
+                "legStatus": "Answered",
+                	"direction": "Outbound",
+                "duration": "110",
+                "callLegCost": {
+               		"amount": 6.33,
+ 	 					},
+                "createdAt": "2012-05-16T14:00:10",
+                "lastUpdated": "2012-05-16T14:02:00",
+ 		}
+</code></pre>
               </dd>
             </dl>
           </li>
         </ul>
 
- 				~~~
+ 	~~~
 
-        <pre><code>		: XML  (example)
-</code></pre>
+        <p>: <strong>XML</strong></p>
 
         <ul>
           <li>
@@ -257,18 +257,20 @@ em {
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#putdoc">
     <dt>PUT</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
+  <!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#deletedoc">
     <dt>DELETE</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
+  <!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
