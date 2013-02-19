@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="Content-Language" content="en-us" />
-  <meta http-equiv="imagetoolbar" content="false" />
-  <meta name="MSSmartTagsPreventParsing" content="true" />
-  <title></title>
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <style type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="imagetoolbar" content="false">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<title></title>
+<link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style type="text/css">
   h1, h2, h3, h4, h5 {
     color: #006595;
   }
@@ -100,14 +100,11 @@ em {
   </style>
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-
-  <div id="header-wrapper" class="page-header">
+  <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
     <div id="header" class="container-fluid">
       <div class="row-fluid">
-        <a class="logo offset1" href="/">
-          <img src="http://bluevia.com/img/BlueVia-Hdr-Logo-SML.png" width="100" alt="Bluevia Logo" /><span class="lightblue"></span>
+        <a class="logo offset1" href="../../../">
+          <img src="http://bluevia.com/img/BlueVia-Hdr-Logo-SML.png" width="100" alt="Bluevia Logo"><span class="lightblue"></span>
         </a>
 
       </div>
@@ -120,21 +117,22 @@ em {
       <div class="content span8 offset1">
 
         <ul class="breadcrumb">
-          <li><a href="/">Home</a> <span class="divider">/</span></li>
-          <li class="active"></li>
+<li>
+<a href="../../../">Home</a> <span class="divider">/</span>
+</li>
+          <li class="active">
         </ul>
+<h1 id="bluevia-voice-restful-api-quick-start-guide">BlueVia Voice RESTful API Quick Start Guide</h1>
 
-        <h1 id="bluevia-voice-restful-api-quick-start-guide">BlueVia Voice RESTful API Quick Start Guide</h1>
-
-<p>For further details about the RESTful API see <a href="/alpha/restref/">the BlueVia RESTful API reference</a>. </p>
+<p>For further details about the RESTful API see <a href="../../restref/">the BlueVia RESTful API reference</a>. </p>
 
 <p>The following PHP examples will show you the basics. Again if PHP is not your bag then modify the code as needed! :-)</p>
 
 <h2 id="creating-a-call-using-the-bluevia-voice-restful-api">Creating a Call Using The BlueVia Voice RESTful API</h2>
 
-<p>This quick start guide mimics the <a href="/alpha/quickstart/connectcallnocode">the connect a call without any code</a> quick start guide. The difference is that in this case, instead of dialing your BlueVia Voice Number to start a call, you will instead use the API to instantiate a call. </p>
+<p>This quick start guide mimics the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide. The difference is that in this case, instead of dialing your BlueVia Voice Number to start a call, you will instead use the API to instantiate a call. </p>
 
-<p>So configure your BlueVia Voice Number in the <a href="http://www.bluevia.com">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="/alpha/quickstart/connectcallnocode">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
+<p>So configure your BlueVia Voice Number in the <a href="http://www.bluevia.com">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
 
 <pre><code>{
     "commands": [
@@ -153,11 +151,12 @@ em {
 <p><strong>Remember:</strong></p>
 
 <ul>
-  <li><em>callerId</em> must be a BlueVia Number that you own</li>
-  <li><em>destination</em> is the B number that you will call. 
+<li>
+<em>callerId</em> must be a BlueVia Number that you own</li>
+  <li>
+<em>destination</em> is the B number that you will call. 
 In this example the A number will be the number you use to start a call using the API.</li>
 </ul>
-
 <p>Once you have configured your number’s callback URL to point to this JSON file, BlueVia will make a HTTP POST request to retrieve these commands, once Phone A, that you will call via an API call, answers. When Phone A answers, This JSON will result in Phone B being called and when Phone B answers, both Phone A and Phone B will be on the same call.</p>
 
 <p>The simplest way to create a call via the RESTful API is <em>curl</em> from the command line</p>
@@ -183,31 +182,32 @@ $headers = array(
 <p>The above are simply variables used in the script:</p>
 
 <ul>
-  <li>*https://<update bluevia="" api="" host="" here="">/comms/v1/calls* is the URL for the calls resource. You will make a POST request to this in order to create a call leg.</update></li>
-  <li><em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="http://www.bluevia.com">BlueVia Dashboard</a></li>
+<li>*https://<update bluevia="" api="" host="" here="">/comms/v1/calls* is the URL for the calls resource. You will make a POST request to this in order to create a call leg.</update>
+</li>
+  <li>
+<em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="http://www.bluevia.com">BlueVia Dashboard</a>
+</li>
   <li>As you are providing a JSON body in our request and require a JSON response you have to set the appropriate <em>Content-Type</em> and <em>Accept</em> headers in your POST request</li>
 </ul>
-
-<p>Then you have to specify the body of the HTTP request to POST to the <a href="/alpha/restref/calls">Calls Resource</a></p>
+<p>Then you have to specify the body of the HTTP request to POST to the <a href="../../restref/calls">Calls Resource</a></p>
 
 <pre><code>// Create the First Call Leg i.e. add Phone A to the call
 // this is the body content passed in with the API request
 $bodyContent = "{\"callerId\":\"tel:+&lt;your BlueVia Phone Number\",\"destination\":\"tel:+&lt;Phone A Number&gt;\"}";
 </code></pre>
 
-<p>In this case, as with the <a href="/alpha/quickstart/connectcallnocode">the connect a call without any code</a> quick start guide:</p>
+<p>In this case, as with the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide:</p>
 
 <ul>
-  <li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="http://www.bluevia.com">BlueVia Dashboard</a>.</li>
+<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="http://www.bluevia.com">BlueVia Dashboard</a>.</li>
   <li>The Number format is always in international dialing format *tel:+<country code=""><bluevia voice="" number="">*. 
-</bluevia></country>    <ul>
-      <li>Remember to include the <em>tel:+</em> prefix</li>
+</bluevia></country><ul>
+<li>Remember to include the <em>tel:+</em> prefix</li>
     </ul>
-  </li>
+</li>
   <li>the destination is the Phone A phone number. This is the first number you will add to the call</li>
 </ul>
-
-<p>Then you can use <a href="http://php.net/manual/en/book.curl.php">PHP cURL</a> to format your HTTP POST request to the <a href="/alpha/restref/calls">Calls Resource</a>.  </p>
+<p>Then you can use <a href="http://php.net/manual/en/book.curl.php">PHP cURL</a> to format your HTTP POST request to the <a href="../../restref/calls">Calls Resource</a>.  </p>
 
 <pre><code>// PHP stuff for making the RESTful API request
 $ch = curl_init();
@@ -254,13 +254,13 @@ curl_close($ch);
 ?&gt;
 </code></pre>
 
-<p>The above code retrieves the <em>callID</em>. We will use this to <a href="/alpha/quickstart/modifycall">modify an existing call with the REST API</a>.</p>
+<p>The above code retrieves the <em>callID</em>. We will use this to <a href="../modifycall">modify an existing call with the REST API</a>.</p>
 
 <p>To execute <em>makeACall.php</em> host the script on your Web Server, with PHP running and from the command line call <em>php makeACall.php</em> </p>
 
 
-        <hr/>
-        <span id="prevPage" class="bottomLinks pull-left"></span>
+        <hr>
+<span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
       </div>
@@ -269,252 +269,252 @@ curl_close($ch);
         <div class="accordion" id="accordionMenu">
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionOverview" href="#collapseOverview"><i class="icon-chevron-down"></i></a><a href="/alpha/overview/">Overview</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionOverview" href="#collapseOverview"><i class="icon-chevron-down"></i></a><a href="../../overview/">Overview</a>
             </div>
           <div id="collapseOverview" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="js-guides nav nav-list sidemenu">
-                <li>
-                  <a href="/alpha/overview/restapi/">BlueVia Voice RESTful API</a>
+<li>
+                  <a href="../../overview/restapi/">BlueVia Voice RESTful API</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/callcontrol/">BlueVia Voice Call Control Commands</a>
+                  <a href="../../overview/callcontrol/">BlueVia Voice Call Control Commands</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/callflows/">Call Flows</a>
+                  <a href="../../overview/callflows/">Call Flows</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/existing/">Existing BlueVia APIs and the BlueVia Voice API</a>
+                  <a href="../../overview/existing/">Existing BlueVia APIs and the BlueVia Voice API</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/balance/">Adding Balance To Your BlueVia Account</a>
+                  <a href="../../overview/balance/">Adding Balance To Your BlueVia Account</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/numbers/">Buying Numbers</a>
+                  <a href="../../overview/numbers/">Buying Numbers</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/configure/">Configuring Your BlueVia Numbers</a>
+                  <a href="../../overview/configure/">Configuring Your BlueVia Numbers</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/usingnumbers/">Using Your BlueVia Voice Numbers</a>
+                  <a href="../../overview/usingnumbers/">Using Your BlueVia Voice Numbers</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/pricing/">BlueVia Voice API Costs</a>
+                  <a href="../../overview/pricing/">BlueVia Voice API Costs</a>
                 </li>
                 <li>
-                  <a href="/alpha/overview/knownlimitations/">Known Alpha Limitations</a>
+                  <a href="../../overview/knownlimitations/">Known Alpha Limitations</a>
                 </li>
               </ul>
-            </div>
+</div>
           </div>
 
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionQuickstart" href="#collapseQuickstart"><i class="icon-chevron-down"></i></a><a href="/alpha/quickstart/">Quick Start Guides</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionQuickstart" href="#collapseQuickstart"><i class="icon-chevron-down"></i></a><a href="../">Quick Start Guides</a>
             </div>
           <div id="collapseQuickstart" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="nav nav-list">
-                <li>
-                  <a href="/alpha/quickstart/connectcallnocode/">Connect a Call Without Code</a>
+<li>
+                  <a href="../connectcallnocode/">Connect a Call Without Code</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/createconfnocode/">Create a Conference Without Code</a>
+                  <a href="../createconfnocode/">Create a Conference Without Code</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/confwithpincode/">A Conference With Pin Code</a>
+                  <a href="../confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/addrecording/">Record Conference Participants Names</a>
+                  <a href="../addrecording/">Record Conference Participants Names</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/restapicreatecall/">Create A Call With the REST API</a>
+                  <a href="./">Create A Call With the REST API</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/modifycall/">Modify An Existing Call</a>
+                  <a href="../modifycall/">Modify An Existing Call</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/restapicreateconf/">Create A Conference Call With The REST API</a>
+                  <a href="../restapicreateconf/">Create A Conference Call With The REST API</a>
                 </li>
                 <li>
-                  <a href="/alpha/quickstart/restapiupdateconfig/">Update Your Number's Config With The REST API</a>
+                  <a href="../restapiupdateconfig/">Update Your Number's Config With The REST API</a>
                 </li>
 
               </ul>
-            </div>
+</div>
           </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRestRef" href="#collapseRestRef"><i class="icon-chevron-down"></i></a><a href="/alpha/restref/">RESTful API Reference</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRestRef" href="#collapseRestRef"><i class="icon-chevron-down"></i></a><a href="../../restref/">RESTful API Reference</a>
             </div>
           <div id="collapseRestRef" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="nav nav-list">
-                <li>
-                  <a href="/alpha/restref/request/">HTTP Request</a>
+<li>
+                  <a href="../../restref/request/">HTTP Request</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/response/">HTTP Response</a>
+                  <a href="../../restref/response/">HTTP Response</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/resources/">Resources</a>
+                  <a href="../../restref/resources/">Resources</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/accountresources/">Account Management Resources</a>
+                  <a href="../../restref/accountresources/">Account Management Resources</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/account/">Account</a>
+                  <a href="../../restref/account/">Account</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/accountnumberscollection/">Account Numbers Collection</a>
+                  <a href="../../restref/accountnumberscollection/">Account Numbers Collection</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/accountnumber/">Account Number</a>
+                  <a href="../../restref/accountnumber/">Account Number</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/recordings/">Recordings</a>
+                  <a href="../../restref/recordings/">Recordings</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/availablenumberscollection/">Available Numbers Collection</a>
+                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/calls/">Calls Resources</a>
+                  <a href="../../restref/calls/">Calls Resources</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/callcollection/">Call Collection</a>
+                  <a href="../../restref/callcollection/">Call Collection</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/call/">Call</a>
+                  <a href="../../restref/call/">Call</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/calllegscollection/">Calls Leg Collection</a>
+                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/callleg/">Call Leg</a>
+                  <a href="../../restref/callleg/">Call Leg</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/modifycall/">Modify Call - setcommands</a>
+                  <a href="../../restref/modifycall/">Modify Call - setcommands</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/sms/">SMS Resources</a>
+                  <a href="../../restref/sms/">SMS Resources</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/specificlegs/">Send Commands To Specific Legs</a>
+                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/callstatuses/">Call Statuses</a>
+                  <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
-                  <a href="/alpha/restref/calllegstatuses/">Call Leg Statuses</a>
+                  <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
               </ul>
-            </div>
+</div>
           </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionCommandRef" href="#collapseCommandRef"><i class="icon-chevron-down"></i></a><a href="/alpha/commandref/">Call Control Commands Reference</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionCommandRef" href="#collapseCommandRef"><i class="icon-chevron-down"></i></a><a href="../../commandref/">Call Control Commands Reference</a>
             </div>
           <div id="collapseCommandRef" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="nav nav-list">
-                <li>
-                  <a href="/alpha/commandref/sendingcallcommands/">Providing Call Commands</a>
+<li>
+                  <a href="../../commandref/sendingcallcommands/">Providing Call Commands</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/dial/">Dial</a>
+                  <a href="../../commandref/dial/">Dial</a>
                 </li>
                 <li>
                   <ul class="nav nav-list">
-                    <li>
-                      <a href="/alpha/commandref/dialnumber/">Dial Number</a>
+<li>
+                      <a href="../../commandref/dialnumber/">Dial Number</a>
                     </li>
                     <li>
-                      <a href="/alpha/commandref/dialconference/">Dial Conference</a>
+                      <a href="../../commandref/dialconference/">Dial Conference</a>
                     </li>
                     <li>
-                      <a href="/alpha/commandref/dialcallid/">Dial Call Id</a>
+                      <a href="../../commandref/dialcallid/">Dial Call Id</a>
                     </li>
                   </ul>
+</li>
+                <li>
+                  <a href="../../commandref/speak/">Speak</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/speak/">Speak</a>
+                  <a href="../../commandref/play/">Play</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/play/">Play</a>
+                  <a href="../../commandref/getdigits/">GetDigits</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/getdigits/">GetDigits</a>
+                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/record/">Record</a>
+                  <a href="../../commandref/hangup/">HangUp</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/hangup/">HangUp</a>
+                  <a href="../../commandref/redirect/">Redirect</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/redirect/">Redirect</a>
+                  <a href="../../commandref/wait/">Wait</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/wait/">Wait</a>
+                  <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/sms/">SMS</a>
+                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
-                  <a href="/alpha/commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
-                  <a href="/alpha/commandref/commandchains/">Command Chains</a>
+                  <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
-            </div>
+</div>
           </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionNotifications" href="#collapseNotifications"><i class="icon-chevron-down"></i></a><a href="/alpha/notifications/">Notification Events Reference</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionNotifications" href="#collapseNotifications"><i class="icon-chevron-down"></i></a><a href="../../notifications/">Notification Events Reference</a>
             </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="/alpha/errorcodes/">Voice and SMS Error Codes</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
           <div id="collapseErrorCodes" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="nav nav-list">
-                <li>
-                  <a href="/alpha/errorcodes/">Subsection</a>
+<li>
+                  <a href="../../errorcodes/">Subsection</a>
                 </li>
               </ul>
-            </div>
+</div>
           </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRoadmap" href="#collapseRoadmap"><i class="icon-chevron-down"></i></a><a href="/alpha/roadmap/">Roadmap</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRoadmap" href="#collapseRoadmap"><i class="icon-chevron-down"></i></a><a href="../../roadmap/">Roadmap</a>
             </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
-              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionPlay" href="#collapsePlay"><i class="icon-chevron-down"></i></a><a href="/alpha/play/">Play ...</a>
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionPlay" href="#collapsePlay"><i class="icon-chevron-down"></i></a><a href="../../play/">Play ...</a>
             </div>
           <div id="collapsePlay" class="accordion-body collapse">
             <div class="accordion-inner">
               <ul class="nav nav-list">
-                <li>
-                  <a href="/alpha/play/">BBC Newsreader</a>
+<li>
+                  <a href="../../play/">BBC Newsreader</a>
                 </li>
                 <li>
-                  <a href="/alpha/play/panicbutton/">Rasberry Pi Panic Button</a>
+                  <a href="../../play/panicbutton/">Rasberry Pi Panic Button</a>
                 </li>
               </ul>
-            </div>
+</div>
           </div>
           </div>
         </div>
@@ -528,7 +528,7 @@ curl_close($ch);
       <div class="footer_inner clearfix offset1">
 
         <ul class="footer_nav span2 unstyled">
-          <h4><a href="http://bluevia.com">Bluevia</a></h4>
+<h4><a href="http://bluevia.com">Bluevia</a></h4>
           <li>
             <a href="https://bluevia.com/en/page/tour">Tour</a>
           </li>
@@ -542,9 +542,8 @@ curl_close($ch);
             <a href="http://bluevia.com/ot-www/webroot/index.php/en/page/boilerplate.Accessibility">accesibility</a>
           </li>
         </ul>
-
-        <ul class="footer_nav span2 unstyled">
-            <h4><a href="https://bluevia.com/en/page/tech">Tech Stuff</a></h4>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/tech">Tech Stuff</a></h4>
             <li>
                 <a href="https://bluevia.com/en/page/tech.overview">Overview</a>
             </li>
@@ -564,9 +563,8 @@ curl_close($ch);
                 <a href="https://bluevia.com/en/page/tech.arduino">Arduino</a>
             </li>
         </ul>
-
-        <ul class="footer_nav span2 unstyled">
-            <h4><a href="https://bluevia.com/en/page/biz">Biz Stuff</a></h4>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/biz">Biz Stuff</a></h4>
             <li>
                 <a href="https://bluevia.com/en/page/biz.businessmodels">Business Models</a>
             </li>
@@ -583,8 +581,8 @@ curl_close($ch);
                 <a href="https://bluevia.com/en/page/biz.wayra">Wayra</a>
             </li>
         </ul>
-        <ul class="footer_nav span2 unstyled">
-            <h4><a href="https://bluevia.com/en/page/inspiration">Inspiration</a></h4>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/inspiration">Inspiration</a></h4>
             <li>
                 <a id="menu-case" href="https://bluevia.com/en/page/inspiration.appiversary">Appiversary</a>
             </li>
@@ -601,14 +599,13 @@ curl_close($ch);
                 <a id="menu-case" href="https://bluevia.com/en/page/inspiration">More...</a>
             </li>
         </ul>
-
-        <ul class="footer_nav span2 unstyled">
-          <h4>Support</h4>
+<ul class="footer_nav span2 unstyled">
+<h4>Support</h4>
           <li>
             <a href="https://bluevia.com/en/page/support">contact us</a>
           </li>
         </ul>
-      </div>
+</div>
     </div>
     <div class="row-fluid">
 
