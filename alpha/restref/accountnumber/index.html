@@ -122,22 +122,21 @@ em {
 </li>
           <li class="active">
         </ul>
+<h1 id="account-management-resources">Account Management Resources</h1>
+
 <h2 id="account-number">Account Number</h2>
 
 <pre><code>URI /comms/v1/me/numbers/{number}{format}
 </code></pre>
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="postmethod" data-toggle="collapse" data-target="#postdoc">
 <dt>POST</dt>
-    <dd>YES - supported in alpha 
-
-      <ul>
-<li>You can invoke a POST request to update the detail associated with the specified number on your account. This will allow you to update the configuration associated with your BlueVia Voice Number. This information can also be managed on your <a href="http://bluevia.com">BlueVia Dashboard</a>. This allows you to specify the set of URLÆs that will handle Voice callback and fallback functionality. You can also specify the format you wish to receive in call notification - either JSON or XML</li>
-      </ul>
+    <dd>YES - supported in alpha<i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available -->
 </dd>
   </dl>
-<p><i class="icon-chevron-down pull-right"> </i></p>
+<pre><code>* You can invoke a POST request to update the detail associated with the specified number on your account. This will allow you to update the configuration associated with your BlueVia Voice Number. This information can also be managed on your [BlueVia Dashboard][URL_To_BlueVia_Dashboard]. This allows you to specify the set of URLÆs that will handle Voice callback and fallback functionality. You can also specify the format you wish to receive in call notification - either JSON or XML
+</code></pre>
 
   <!-- This HTML doesn't need changes -->
   <div class="apidoc collapse in tabable offset1" id="postdoc">
@@ -148,7 +147,7 @@ em {
 <div class="tab-content">
 <div id="tab1" class="tab-pane active">
 
-        <ul>
+        <ul class="reqfields">
 <li>
             <dl>
 <dt>HTTP Method</dt>
@@ -170,33 +169,37 @@ em {
 <li>The following parameters can be provided in the HTTP Body</li>
             </ul>
 <p>: callbackUrl 
-        : this is the callback URL you wish to assign to your number. This can also be set in the <a href="http://bluevia.com">BlueVia Dashboard</a></p>
+      : this is the callback URL you wish to assign to your number. This can also be set in the <a href="https:">BlueVia Dashboard</a></p>
 
             <p>: fallbackUrl 
-        : this is the fallback URL you wish to assign to the your number. Again this can also be done in the <a href="http://bluevia.com">BlueVia Dashboard</a></p>
+      : this is the fallback URL you wish to assign to the your number. Again this can also be done in the <a href="https:">BlueVia Dashboard</a></p>
           </li>
           <li>
-            <p>Examples</p>
+            <dl>
+<dt>Example</dt>
+              <dd>
+<strong>JSON</strong>
 
-            <ul>
-<li>JSON example<br>
-  @todo validate this</li>
-            </ul>
-<p>{
-      “callbackUrl”: “http://newurl1.com”,
-      “fallbackUrl”: “http://newurl2.com”,
-   }</p>
+                <p>~~~
+{
+    “callbackUrl”: “http://newurl1.com”,
+    “fallbackUrl”: “http://newurl2.com”,
+}
+ 	~~~		</p>
+              </dd>
+              <dd>
+                <p><strong>XML</strong></p>
 
-            <ul>
-<li>
-                <p>XML example
-  @todo get one </p>
-              </li>
-              <li>
-                <p>CURL example
-  @todo get one</p>
-              </li>
-            </ul>
+                <pre><code>    @TODO
+</code></pre>
+              </dd>
+              <dd>
+<strong>CURL</strong>
+
+                <pre><code>    @TODO
+</code></pre>
+              </dd>
+            </dl>
 </li>
         </ul>
 </div>
@@ -224,7 +227,7 @@ em {
           <li>
             <dl>
 <dt>Error response</dt>
-              <dd>Consists of an HTTP Error response together with a code and an explanatory text. Possible errors are those applicable among the errors described in [BlueVia Voice Error Codes][URL_To_BlueVia_Voice_And_SMS_Error_Codes].</dd>
+              <dd>Consists of an HTTP Error response together with a code and an explanatory text. Possible errors are those applicable among the errors described in <a href="https:">BlueVia Voice Error Codes</a>.</dd>
             </dl>
 </li>
         </ul>
@@ -238,33 +241,36 @@ em {
 <div class="apimethodgroup well well-small">
   <dl>
 <dt>GET</dt>
-    <dd>YES 
-- NOTE: not available during the alpha period
+    <dd>YES </dd>
+    <dd>NOTE - not available during the alpha period
   * You can invoke a GET to this resource to request the configuration detail for the specified {number} on your account
   * NOTE: Further detail of this method will be provided when delivered. </dd>
   </dl>
+<!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#putdoc">
 <dt>PUT</dt>
-    <dd>YES 
-- NOTE: not available during the alpha period
-  * You can invoke a PUT to this resource which in effect purchases a BlueVia Voice Number and adds this to your account. Using this method also allows you to specify the configuration or the number you are purchasing.  Available numbers can be retrieved using the GET operation for the [Available Numbers Collections][URL_To_Available_Numbers_Collection]
+    <dd>YES </dd>
+    <dd>NOTE - not available during the alpha period
+  * You can invoke a PUT to this resource which in effect purchases a BlueVia Voice Number and adds this to your account. Using this method also allows you to specify the configuration or the number you are purchasing.  Available numbers can be retrieved using the GET operation for the <a href="../availablenumberscollection/">Available Numbers Collections</a>
   * NOTE: Further detail of this method will be provided when delivered. </dd>
   </dl>
+<!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#deletedoc">
 <dt>DELETE</dt>
-    <dd>YES 
-- NOTE: not available during the alpha period
+    <dd>YES </dd>
+    <dd>NOTE - not available during the alpha period
   * Using DELETE on this resource releases the specified BlueVia Voice Number ({number}) from your account.
   * NOTE: Further detail of this method will be provided when delivered.</dd>
   </dl>
+<!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
 
@@ -281,6 +287,46 @@ em {
 <!-- Roadmap -->
 
 <!-- Error codes -->
+
+<!-- account -->
+
+<!-- accountresources-->
+
+<!--Resources-->
+
+<!--accountnumber -->
+
+<!--availablenumberscollection-->
+
+<p><a href="./">Account Numbers</a>: https:</p>
+
+<!--Calls Resources -->
+<p>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]
+[Call][URL_To_BlueVia_Voice_RESTful_Call]
+[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]
+[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</p>
+
+<!--call-->
+
+<!--callcollection-->
+
+<!--Calleg-->
+
+<!--Callegscollection-->
+
+<!--Calls-->
+<p>[URL_To_BlueVia_Voice_Call_Evcent_Notification]  http://</p>
+
+<p><a href="https:">URL_To_BlueVia_Voice_And_SMS_Error_Codes</a></p>
+
+<!--index-->
+
+<p>[URL_To_BlueVia_Roadmap]</p>
+
+<!--Recordings-->
+<p><a href="https:">URL_To_Known_Limitations</a> http://
+[URL_To_Recording_Command] http://</p>
+
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -378,55 +424,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="./">Account Number</a>
-                </li>
-                <li>
-                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="./">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -435,8 +496,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -645,8 +706,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

@@ -122,6 +122,8 @@ em {
 </li>
           <li class="active">
         </ul>
+<h1 id="account-management-resources">Account Management Resources</h1>
+
 <h2 id="account-config-rules-collection">Account Config Rules Collection</h2>
 
 <pre><code>URI Not defined for alpha
@@ -131,8 +133,10 @@ em {
 
   <p>Configuration Rules will allow you to define a predetermined set of configuration that you will be able to assign to a number. In the event that you assign the same configuration to multiple numbers the Config Rules Collection will allow you to manage this in a single location. Consequently if you have to update the configuration for any reason you will only have to update the Config Rules collection and not every single number that uses the configuration  </p>
 
+  <!-- This HTML doesn't need changes -->
 </div>
 <!-- apimethodgroup -->
+
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -230,55 +234,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="./">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="./">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -287,8 +306,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -497,8 +516,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

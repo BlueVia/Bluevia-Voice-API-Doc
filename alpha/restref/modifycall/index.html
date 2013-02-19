@@ -268,6 +268,46 @@ em {
 
 <!-- Error codes -->
 
+<!-- account -->
+
+<!-- accountresources-->
+
+<!--Resources-->
+
+<!--accountnumber -->
+
+<!--availablenumberscollection-->
+
+<p><a href="../accountnumber/">Account Numbers</a>: https:</p>
+
+<!--Calls Resources -->
+<p>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]
+[Call][URL_To_BlueVia_Voice_RESTful_Call]
+[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]
+[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</p>
+
+<!--call-->
+
+<!--callcollection-->
+
+<!--Calleg-->
+
+<!--Callegscollection-->
+
+<!--Calls-->
+<p>[URL_To_BlueVia_Voice_Call_Evcent_Notification]  http://</p>
+
+<p><a href="https:">URL_To_BlueVia_Voice_And_SMS_Error_Codes</a></p>
+
+<!--index-->
+
+<p>[URL_To_BlueVia_Roadmap]</p>
+
+<!--Recordings-->
+<p><a href="https:">URL_To_Known_Limitations</a> http://
+[URL_To_Recording_Command] http://</p>
+
+
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
@@ -364,55 +404,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="./">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -421,8 +476,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -631,8 +686,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

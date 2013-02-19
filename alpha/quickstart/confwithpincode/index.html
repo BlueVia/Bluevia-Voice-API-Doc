@@ -186,10 +186,12 @@ if ($eventName == "CalledNumber") {
 					\"text\": \"Sorry, you didn't enter a selection in time. Please call and try again.\",
 					\"voice\": \"Female\"
 				}
-			}
-
-@todo re-add the hangup command here and test
-@todo test the timeout in the getDigits command
+			},
+			{
+				\"hangup\":{
+				}
+			
+        		}
 
 		]
 	}";
@@ -204,7 +206,7 @@ if ($eventName == "CalledNumber") {
 <li>Asks the caller to enter either 1 or 2, via the embedded <em>speak</em> command</li>
   <li>There is a 5 second <em>timeout</em>, and if the caller doesn’t enter a digit in time the <em>speak</em> command will be executed again. </li>
   <li>If after 2 <em>retries</em> the user has still not entered a selection, then the <em>getDigits</em> command exits and the second <em>speak</em> command is executed before the call is then terminated via the <em>hangup</em> command.</li>
-  <li>Assuming success though(!) - if the user enters a single digit on their keypad, specified by the <em>numberOfDigits</em> element then this data is sent to the second PHP script included in the provided Quick Start Code Samples <strong>ADD GITHUB LINK</strong> - <em>eventHandler.php</em>
+  <li>Assuming success though(!) - if the user enters a single digit on their keypad, specified by the <em>numberOfDigits</em> element then this data is sent to the second PHP script included in the provided Quick Start Code Samples <strong>TODO ADD GITHUB LINK</strong> - <em>eventHandler.php</em>
 </li>
 </ul>
 <p>Looking at the <em>eventHandler.php</em> code. Again you retrieve the eventName from the HTTP POST request body, and in this case there is a switch based on the <em>eventName</em>, which in the case of request generate by BlueVia for a getDigits command will be a <em>DigitsCollected</em> notification. So the first case covered is the event that the called has selected 1, i.e. is a moderator on the conference</p>
@@ -305,45 +307,50 @@ if ($eventName == "CalledNumber") {
 		// switch based on state = moderator/participant
 	switch ($state) {
 		case "moderator":
-				$response = "{
-					\"commands\": [
-						{
-					  \"dial\": {
-									\"conferenceName\": \"" . $digitsLessHash . "\"
-							}
+			$response = "{
+				\"commands\": [
+					{
+				  \"dial\": {
+						\"conferenceName\": \"" . $digitsLessHash . "\",
+						\"conferenceProperties\": {
+							\"mute\":false
 						}
+					    }
+					}
 
-					]
-				}";
-				echo ($response);
-		break;
+				]
+			}";
+			echo ($response);
+			break;
 		case "participant";
-				$response = "{
-					\"commands\": [
-						{
-					  \"dial\": {
-									\"conferenceName\": \"" . $digitsLessHash . "\"
-							}
+			$response = "{
+				\"commands\": [
+					{
+				  \"dial\": {
+						\"conferenceName\": \"" . $digitsLessHash . "\",
+						\"conferenceProperties\": {
+							\"mute\":true
 						}
+					    }
+					}
 
-					]
-				}";
-
-
-**@todo add moderater cases to code muteOnEnter etc... and test!**
+				]
+			}";
+			echo ($response);
+			break;
 </code></pre>
 
 <p>In this case:</p>
 
 <ul>
 <li>If the URL attribute for <em>‘state’</em>, specified in <em>eventHandler.php</em> is equal to moderator, then the caller is placed into a conference name that equals the pincode that the caller entered.</li>
-  <li>The moderator is added to the conference with the additional <em>conferenceProperties</em> - <em>muteOnEnter=false</em> <strong>@todo add this and retest</strong>  When the moderator enters the conference any previous participants who may have been muted, will be able to hear each other</li>
+  <li>The moderator is added to the conference with the additional <em>conferenceProperties - “mute”=false</em>.  When the moderator enters the conference any previous participants who may have been muted, will be able to hear each other</li>
   <li>
 <strong>NOTE:</strong> that as the caller entered a hash (#) to complete their keypad input this has to be removed, prior to using the input as a conferenceName. This is done here:<br><ul>
 <li><em>$digitsLessHash = str_replace(“#”, “”, $digitsCollected)</em></li>
     </ul>
 </li>
-  <li>Any participant is added to the conference with the additional <em>conferenceProperties - muteOnEnter=true</em> <strong>@todo add this and retest</strong>  When a participant enters the conference they will be muted until the moderator joins.</li>
+  <li>Any participant is added to the conference with the additional <em>conferenceProperties - mute=true</em>  When a participant enters the conference they will be muted until the moderator joins.</li>
 </ul>
 <p>That’s it. With a few lines of code you have created a dial in conference service on your BlueVia Voice Number that supports multiple conferences, based on a pin-code access. This demo will allow you to have multiple conferences hosted from the same BlueVia voice Number.</p>
 
@@ -446,55 +453,70 @@ if ($eventName == "CalledNumber") {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../../restref/response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/account/">Account</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/call/">Call</a>
-                </li>
-                <li>
-                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../../restref/modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../../restref/sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../../restref/accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../../restref/account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../../restref/calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../../restref/callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../../restref/sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -503,8 +525,8 @@ if ($eventName == "CalledNumber") {
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -713,8 +735,8 @@ if ($eventName == "CalledNumber") {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

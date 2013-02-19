@@ -122,13 +122,14 @@ em {
 </li>
           <li class="active">
         </ul>
-<h2 id="available-numbers-collection">Available Numbers Collection</h2>
+<h1 id="available-numbers-collection">Available Numbers Collection</h1>
 
 <pre><code>URI /comms/v1/availablenumbers{format}
 </code></pre>
 
 <ul>
-<li>As highlighted in the [Known Limitations][URL_To_Known_Limitations] during the alpha period it will not be possible to purchase numbers. Instead we are giving you numbers in each of the supported alpha territories. When numbers are available to purchase the Available Numbers Collection will provide a mechanism for you to access the details of numbers that are available to purchase. You will then be able to purchase these numbers, and add them to your account using the [Account Number Collections][URL_To_Account_Number_Collection] and [Account Numbers][URL_To_Account_Number]</li>
+<li>As highlighted in the <a href="https:">Known Limitations</a> during the alpha period it will not be possible to purchase numbers. Instead we are giving you numbers in each of the supported alpha territories. When numbers are available to purchase the Available Numbers Collection will provide a mechanism for you to access the details of numbers that are available to purchase. You will then be able to purchase these numbers, and add them to your account using the <a href="https:">Account Number Collections</a> and <a href="../accountnumber/">Account Numbers</a>
+</li>
 </ul>
 <div class="apimethodgroup well well-small">
   <dl>
@@ -140,13 +141,12 @@ em {
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl>
+  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#getdoc">
 <dt>GET</dt>
-    <dd>YES - NOTE: not available during the alpha period</dd>
+    <dd>YES  NOTE - not available during the alpha period<i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available -->
+</dd>
   </dl>
-<p class="apimethod" id="getmethod" data-toggle="collapse" data-target="#getdoc"><i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available --></p>
-  <!-- This HTML doesn't need changes -->
-  <pre><code>* Using GET on this resource will provide a list of numbers, that match the specified query parameters you provide - country, area code etc..., that are available to purchase and add to your account.
+<!-- This HTML doesn't need changes --><pre><code>* Using GET on this resource will provide a list of numbers, that match the specified query parameters you provide - country, area code etc..., that are available to purchase and add to your account.
 * NOTE: Further detail of this method will be provided when delivered.
 </code></pre>
 
@@ -184,6 +184,46 @@ em {
 <!-- Roadmap -->
 
 <!-- Error codes -->
+
+<!-- account -->
+
+<!-- accountresources-->
+
+<!--Resources-->
+
+<!--accountnumber -->
+
+<!--availablenumberscollection-->
+
+<p><a href="../accountnumber/">Account Numbers</a>: https:</p>
+
+<!--Calls Resources -->
+<p>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]
+[Call][URL_To_BlueVia_Voice_RESTful_Call]
+[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]
+[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</p>
+
+<!--call-->
+
+<!--callcollection-->
+
+<!--Calleg-->
+
+<!--Callegscollection-->
+
+<!--Calls-->
+<p>[URL_To_BlueVia_Voice_Call_Evcent_Notification]  http://</p>
+
+<p><a href="https:">URL_To_BlueVia_Voice_And_SMS_Error_Codes</a></p>
+
+<!--index-->
+
+<p>[URL_To_BlueVia_Roadmap]</p>
+
+<!--Recordings-->
+<p><a href="https:">URL_To_Known_Limitations</a> http://
+[URL_To_Recording_Command] http://</p>
+
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -281,55 +321,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="./">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="./">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="./">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -338,8 +393,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -548,8 +603,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

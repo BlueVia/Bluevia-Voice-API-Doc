@@ -126,7 +126,7 @@ em {
 
 <p>@TODO NOTE: I STILL NEED TO ADD DESCRIPTIONS FOR COMMANDS BEING DIRECTED AT ALL CALL LEGS OR TARGETED AT SPECIFIC CALL LEGS</p>
 
-<p>You have access to a rich set of call control functionality via either XML and JSON call control commands. When you call one of your <a href="http://bluevia.com">BlueVia Voice Numbers</a>, or make a <a href="../restref/">BlueVia REST API request</a> to create a new call, or modify an existing call, you can specify how to manage the calls behaviour by specifying XML or JSON commands. Calls can be managed by commands via the following mechanisms:</p>
+<p>You have access to a rich set of call control functionality via either XML and JSON call control commands. When you call one of your <a href="https:">BlueVia Voice Numbers</a>, or make a <a href="../restref/">BlueVia REST API request</a> to create a new call, or modify an existing call, you can specify how to manage the calls behaviour by specifying XML or JSON commands. Calls can be managed by commands via the following mechanisms:</p>
 
 <ul>
 <li>When your BlueVia Voice Number is called, BlueVia will make a HTTP POST request to the callback URL associated with your number. You can provide Call Control Commands in the HTTP Response body to BlueVia</li>
@@ -138,7 +138,7 @@ em {
 <p>The following Call Control Commands can be specified by you:</p>
 
 <ul>
-<li><a href="dial/">dial</a></li>
+<li><a href="https:">dial</a></li>
   <li><a href="speak/">speak</a></li>
   <li><a href="play/">play</a></li>
   <li><a href="getdigits/">getDigits</a></li>
@@ -148,7 +148,37 @@ em {
   <li><a href="wait/">wait</a></li>
   <li><a href="sms/">sms</a></li>
 </ul>
-<!-- Bluevia  --><!-- Overview --><!-- Restref --><!-- Notifications --><!-- Command ref --><!-- Roadmap --><!-- Error codes --><hr>
+<!-- Bluevia  --><!-- Overview --><!-- Restref --><!-- Notifications --><!-- Command ref --><!-- Roadmap --><!-- Error codes --><!-- account --><!-- accountresources--><!--Resources--><!--accountnumber --><!--availablenumberscollection--><p><a href="../restref/accountnumber/">Account Numbers</a>: https:</p>
+
+<!--Calls Resources -->
+<p>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]
+[Call][URL_To_BlueVia_Voice_RESTful_Call]
+[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]
+[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</p>
+
+<!--call-->
+
+<!--callcollection-->
+
+<!--Calleg-->
+
+<!--Callegscollection-->
+
+<!--Calls-->
+<p>[URL_To_BlueVia_Voice_Call_Evcent_Notification]  http://</p>
+
+<p><a href="https:">URL_To_BlueVia_Voice_And_SMS_Error_Codes</a></p>
+
+<!--index-->
+
+<p>[URL_To_BlueVia_Roadmap]</p>
+
+<!--Recordings-->
+<p><a href="https:">URL_To_Known_Limitations</a> http://
+[URL_To_Recording_Command] http://</p>
+
+
+        <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -244,55 +274,70 @@ em {
 <li>
                   <a href="../restref/request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../restref/response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../restref/resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../restref/accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../restref/account/">Account</a>
-                </li>
-                <li>
-                  <a href="../restref/accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../restref/accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../restref/recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../restref/availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../restref/calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../restref/callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../restref/call/">Call</a>
-                </li>
-                <li>
-                  <a href="../restref/calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../restref/callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../restref/modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../restref/sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../restref/accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../restref/account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../restref/availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../restref/calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../restref/callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../restref/callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../restref/sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../restref/specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -301,8 +346,8 @@ em {
                 <li>
                   <a href="../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -511,8 +556,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

@@ -222,55 +222,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="./">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -279,8 +294,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -489,8 +504,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

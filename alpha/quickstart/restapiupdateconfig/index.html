@@ -270,55 +270,70 @@ curl_close($ch);
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../../restref/response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/account/">Account</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/calls/">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../../restref/callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/call/">Call</a>
-                </li>
-                <li>
-                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../../restref/callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../../restref/modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../../restref/sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../../restref/accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../../restref/account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../../restref/calls/">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../../restref/callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../../restref/callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../../restref/sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -327,8 +342,8 @@ curl_close($ch);
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -537,8 +552,8 @@ curl_close($ch);
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 

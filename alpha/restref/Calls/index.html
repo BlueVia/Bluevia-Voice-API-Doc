@@ -122,201 +122,42 @@ em {
 </li>
           <li class="active">
         </ul>
-<h1 id="call">Call</h1>
+<h1 id="calls-resources">Calls Resources</h1>
 
-<h3 id="call-collection">Call Collection</h3>
+<ul>
+<li>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]</li>
+  <li>[Call][URL_To_BlueVia_Voice_RESTful_Call]</li>
+  <li>[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]</li>
+  <li>[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</li>
+</ul>
+<!-- Bluevia  --><!-- Overview --><!-- Restref --><!-- Notifications --><!-- Command ref --><!-- Roadmap --><!-- Error codes --><!-- account --><!-- accountresources--><!--Resources--><!--accountnumber --><!--availablenumberscollection--><p><a href="../accountnumber/">Account Numbers</a>: https:</p>
 
- 	 /comms/v1/calls{format}?QueryParams
+<!--Calls Resources -->
+<p>[Call Collection][URL_To_BlueVia_Voice_Call_Collection]
+[Call][URL_To_BlueVia_Voice_RESTful_Call]
+[Calls Leg Collection][URL_To_BlueVia_Voice_RESTful_Calls_Leg_Collection]
+[Call Leg][URL_To_BlueVia_Voice_RESTful_Call_Leg]</p>
 
-<div class="apimethodgroup well well-small">
-  <dl class="apimethod" id="postmethod" data-toggle="collapse" data-target="#postdoc">
-<dt>POST</dt>
-    <dd>YES
-  * If you invoke a POST to the calls collection you create a new call in the collection. So you establish a new outbound call. <i class="icon-chevron-down pull-right"> </i>
-</dd>
-  </dl>
-<!-- This HTML doesn't need changes --><div class="apidoc collapse in tabable offset1" id="postdoc">
-    <ul class="nav nav-tabs">
-<li class="active"><a href="#tab1" data-toggle="tab">Request</a></li>
-      <li><a href="#tab2" data-toggle="tab">Response</a></li>
-  </ul>
-<div class="tab-content">
-<div id="tab1" class="tab-pane active">
-        <ul>
-<li>
-            <dl>
-<dt>HTTP Method</dt>
-              <dd>POST</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Supported Query Parameters</dt>
-              <dd>None</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Body    <em>The POST includes a JSON or an XML body</em>
-</dt>
-              <dd>
-                <dl>
-<dt>The following parameters can be provided in the HTTP Body</dt>
-                  <dt>	: callerId </dt>
-                  <dt>      : MANDATORY and has to be one of your BlueVia Voice numbers</dt>
-                  <dd>
-                    <dl>
-<dt>destination </dt>
-                      <dd>MANDATORY and has to be one of your BlueVia Voice numbers</dd>
-                    </dl>
-</dd>
-                  <dd>
-                    <dl>
-<dt>callbackUrl </dt>
-                      <dd>This is optional and can be used to provide a different callback URL, for this call only, compared to the one configured against your BlueVia number. If this is specified BlueVia will make a POST request to this URL, for this call only, for the [Answered in call event notification][URL_To_BlueVia_Voice_Call_Evcent_Notifications]</dd>
-                    </dl>
-</dd>
-                  <dd>
-                    <dl>
-<dt>fallbackUrl </dt>
-                      <dd>This is optional and can be used to provide a different fallback URL, for this call only, compared to the one configured against your BlueVia number. In the event that the callbackUrl used on this call is not reachable, BlueVia will make a POST request to this URL, for this call only, for the [CallbackUnavailable in call event notification][URL_To_BlueVia_Voice_Call_Evcent_Notification] </dd>
-                    </dl>
-</dd>
-                </dl>
-</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Example</dt>
-              <dd>
-<strong>JSON</strong> 
-@todo validate this
-~~~
-{
-“callerId”: “tel:+34666666666”,
-“destination”: “tel:+34677777777”,
-“callbackUrl”: “http://developer.app.com”,
-“fallbackUrl”: “http://developer.app.com/fail”
-}
-~~~</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Example</dt>
-              <dd>
-<strong>XML</strong> 
-        @todo get one</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Example</dt>
-              <dd>
-<strong>CURL</strong>
-        @todo get one</dd>
-            </dl>
-</li>
-        </ul>
-</div>
-<div id="tab2" class="tab-pane">
-        <ul>
-<li>
-            <dl>
-<dt>Successful response</dt>
-              <dd>HTTP Response: 201 Created</dd>
-              <dd>
-                <dl>
-<dt>Headers</dt>
-                  <dd>
-                    <p>Location (mandatory): Includes the URI pointing to the created resource (an Outbound Call)</p>
-                  </dd>
-                  <dd>https://{host}/comms/v1/calls/{callId} </dd>
-                </dl>
-</dd>
-              <dd>
-                <dl>
-<dt>Body</dt>
-                  <dd>
-                    <p>The response includes a JSON or an XML body</p>
-                  </dd>
-                </dl>
-</dd>
-              <dd>
-                <dl>
-<dt>Example</dt>
-                  <dd>JSON</dd>
-                </dl>
-<pre><code>{"callId": "23481-apdifjap-dpifje-18403"}
-</code></pre>
-              </dd>
-              <dd>
-                <dl>
-<dt>Example</dt>
-                  <dd>XML 
-    @todo get one</dd>
-                </dl>
-</dd>
-              <dd>
-                <p>Example
- 	: CURL
-        @todo get one</p>
-              </dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Error response:</dt>
-              <dd>Consists of an HTTP Error response together with a code and an explanatory text. Possible errors are those applicable among the errors described in [BlueVia Voice Error Codes][URL_To_BlueVia_Voice_And_SMS_Error_Codes].</dd>
-            </dl>
-</li>
-        </ul>
-</div> <!-- tab2 -->
-</div> <!-- tab-content -->
-</div>
-  <p><!-- apidoc --></p>
-</div>
-<!-- apimethodgroup -->
+<!--call-->
 
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>GET</dt>
-    <dd>YES 
- 	* NOTE: not available during the alpha period</dd>
-  </dl>
-</div>
-<!-- apimethodgroup -->
+<!--callcollection-->
 
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>PUT</dt>
-    <dd>NOT ALLOWED</dd>
-  </dl>
-</div>
-<!-- apimethodgroup -->
+<!--Calleg-->
 
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>DELETE</dt>
-    <dd>NOT ALLOWED</dd>
-  </dl>
-</div>
-<!-- apimethodgroup -->
+<!--Callegscollection-->
 
-<!-- Bluevia  -->
+<!--Calls-->
+<p>[URL_To_BlueVia_Voice_Call_Evcent_Notification]  http://</p>
 
-<!-- Overview -->
+<p><a href="https:">URL_To_BlueVia_Voice_And_SMS_Error_Codes</a></p>
 
-<!-- Restref -->
+<!--index-->
 
-<!-- Notifications -->
+<p>[URL_To_BlueVia_Roadmap]</p>
 
-<!-- Command ref -->
-
-<!-- Roadmap -->
-
-<!-- Error codes -->
+<!--Recordings-->
+<p><a href="https:">URL_To_Known_Limitations</a> http://
+[URL_To_Recording_Command] http://</p>
 
 
         <hr>
@@ -415,55 +256,70 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-                <li>
-                  <a href="../response/">HTTP Response</a>
-                </li>
+              
                 <li>
                   <a href="../resources/">Resources</a>
-                </li>
-                <li>
-                  <a href="../accountresources/">Account Management Resources</a>
-                </li>
-                <li>
-                  <a href="../account/">Account</a>
-                </li>
-                <li>
-                  <a href="../accountnumberscollection/">Account Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="../accountnumber/">Account Number</a>
-                </li>
-                <li>
-                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                </li>
-                <li>
-                  <a href="../recordings/">Recordings</a>
-                </li>
-                <li>
-                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                </li>
-                <li>
-                  <a href="./">Calls Resources</a>
-                </li>
-                <li>
-                  <a href="../callcollection/">Call Collection</a>
-                </li>
-                <li>
-                  <a href="../call/">Call</a>
-                </li>
-                <li>
-                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                </li>
-                <li>
-                  <a href="../callleg/">Call Leg</a>
-                </li>
-                <li>
-                  <a href="../modifycall/">Modify Call - setcommands</a>
-                </li>
-                <li>
-                  <a href="../sms/">SMS Resources</a>
-                </li>
-                <li>
+                
+
+
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../accountresources/">Account Management Resources</a>
+                            </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                  <a href="../account/">Account</a>
+                                </li>
+                                <li>
+                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../accountnumber/">Account Number</a>
+                                </li>
+                                <li>
+                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../recordings/">Recordings</a>
+                                </li>
+                              </ul>
+</li>
+                      </ul>
+</li>
+
+
+
+                      <li>
+                        <a href="../availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="./">Calls Resources</a>
+                          </li>
+<li>
+                              <ul class="nav nav-list">
+<li>
+                                <a href="../callcollection/">Call Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../call/">Call</a>
+                                </li>
+                                <li>
+                                  <a href="../calllegscollection/">Calls Leg Collection</a>
+                                </li>
+                                <li>
+                                  <a href="../callleg/">Call Leg</a>
+                                </li>
+                              </ul>
+</li>
+                      
+                      <li>
+                        <a href="../sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+<li>
                   <a href="../specificlegs/">Send Commands To Specific Legs</a>
                 </li>
                 <li>
@@ -472,8 +328,8 @@ em {
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              </ul>
-</div>
+              
+            </div>
           </div>
           </div>
           <div class="accordion-group">
@@ -682,8 +538,8 @@ em {
 
   // Highlighting current page in the sidebar menu
   pathname = window.location.pathname;
-  $("a[href='"+pathname+"']").parent().addClass("active");
-  $("a[href='"+pathname+"']").parents(".collapse").collapse("show");
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
 
   pathtitle = $("#sidebar a[href='./']")[0];
 
