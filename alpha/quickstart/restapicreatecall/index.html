@@ -132,15 +132,15 @@ em {
 
 <p>This quick start guide mimics the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide. The difference is that in this case, instead of dialing your BlueVia Voice Number to start a call, you will instead use the API to instantiate a call. </p>
 
-<p>So configure your BlueVia Voice Number in the <a href="http://www.bluevia.com">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
+<p>So configure your BlueVia Voice Number in the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
 
 <pre><code>{
     "commands": [
 	{
 	  "dial": {
 		"number": {
-		    "callerId": "tel:+442012345678",
-		    "destination": "tel:+44712345678"
+		    "callerId": "tel:+&lt;country code&gt;&lt;your BlueVia Voice number&gt;",
+		    "destination": "tel:+&lt;country code&gt;&lt;destination phone&gt;"
 		}
 	    }
 	}
@@ -159,9 +159,11 @@ In this example the A number will be the number you use to start a call using th
 </ul>
 <p>Once you have configured your number’s callback URL to point to this JSON file, BlueVia will make a HTTP POST request to retrieve these commands, once Phone A, that you will call via an API call, answers. When Phone A answers, This JSON will result in Phone B being called and when Phone B answers, both Phone A and Phone B will be on the same call.</p>
 
+<p><strong>NOTE</strong> for the alpha the REST API end point is https://live-api-nv.bluevia.com:10443</p>
+
 <p>The simplest way to create a call via the RESTful API is <em>curl</em> from the command line</p>
 
-<pre><code>curl -k -H "Accept: application/json" -H "Content-type: application/json" --user &lt;your API key&gt;:&lt;your API secret&gt; -X POST -d '{"callerId":"tel:+&lt;country code&gt;&lt;your BlueVia Voice Number&gt;","destination":"tel:+&lt;country code&gt;&lt;the number you wish to call&gt;"}' https://&lt;BlueVia API Host&gt;/comms/v1/calls 
+<pre><code>curl -k -H "Accept: application/json" -H "Content-type: application/json" --user &lt;your API key&gt;:&lt;your API secret&gt; -X POST -d '{"callerId":"tel:+&lt;country code&gt;&lt;your BlueVia Voice Number&gt;","destination":"tel:+&lt;country code&gt;&lt;the number you wish to call&gt;"}' https://live-api-nv.bluevia.com:10443/comms/v1/calls 
 </code></pre>
 
 <p>When the destination phone rings, and answers the destination phone, specified in the <em>dial</em> command in the JSON referred to by the callback URL, will be called and the two phones will be connected on a call.  </p>
@@ -171,7 +173,7 @@ In this example the A number will be the number you use to start a call using th
 <p>Stepping through <em>makeACall.php</em></p>
 
 <pre><code>&lt;?php
-$url = "https://**update BlueVia API Host Here**/comms/v1/calls";
+$url = "https://live-api-nv.bluevia.com:10443/comms/v1/calls";
 $accessCredentials = "&lt;your API key&gt;" . ":" . "&lt;your secret&gt;";
 $headers = array(
     'Content-Type: application/json',
@@ -182,10 +184,10 @@ $headers = array(
 <p>The above are simply variables used in the script:</p>
 
 <ul>
-<li>*https://<update bluevia="" api="" host="" here="">/comms/v1/calls* is the URL for the calls resource. You will make a POST request to this in order to create a call leg.</update>
-</li>
+<li>
+<em>https://live-api-nv.bluevia.com:10443/comms/v1/calls</em> is the URL for the calls resource. You will make a POST request to this in order to create a call leg.</li>
   <li>
-<em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="http://www.bluevia.com">BlueVia Dashboard</a>
+<em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>
 </li>
   <li>As you are providing a JSON body in our request and require a JSON response you have to set the appropriate <em>Content-Type</em> and <em>Accept</em> headers in your POST request</li>
 </ul>
@@ -199,7 +201,7 @@ $bodyContent = "{\"callerId\":\"tel:+&lt;your BlueVia Phone Number\",\"destinati
 <p>In this case, as with the <a href="../connectcallnocode">the connect a call without any code</a> quick start guide:</p>
 
 <ul>
-<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="http://www.bluevia.com">BlueVia Dashboard</a>.</li>
+<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>.</li>
   <li>The Number format is always in international dialing format *tel:+<country code=""><bluevia voice="" number="">*. 
 </bluevia></country><ul>
 <li>Remember to include the <em>tel:+</em> prefix</li>

@@ -147,7 +147,7 @@ em {
 <em>eventHandler.php</em> and</li>
   <li><em>startConfernece.php</em></li>
 </ol>
-<p>Update the configuration of the <a href="http://www.bluevia.com">BlueVia Voice Number</a> to point to the location where you host <em>PincodeConference.php</em>. This is the starting location for this demo. After you have configured your BlueVia Voice Number and you dial it, BlueVia will make a HTTP POST request to the URL pointing to <em>PincodeConference.php</em>.The HTTP POST will contain notification information in the body of the request. Detail of the <a href="../../notifications/">BlueVia Voice Call Notifications</a> at this stage is not important, other than we are expecting to receive a <em>CalledNumber</em> notification type. In fact in this case it is the only notification we will retrieve.</p>
+<p>Update the configuration of the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Number</a> to point to the location where you host <em>PincodeConference.php</em>. This is the starting location for this demo. After you have configured your BlueVia Voice Number and you dial it, BlueVia will make a HTTP POST request to the URL pointing to <em>PincodeConference.php</em>.The HTTP POST will contain notification information in the body of the request. Detail of the <a href="../../notifications/">BlueVia Voice Call Notifications</a> at this stage is not important, other than we are expecting to receive a <em>CalledNumber</em> notification type. In fact in this case it is the only notification we will retrieve.</p>
 
 <p>So in the following case the first thing you do is get the notification detail from the HTTP POST Request from BlueVia. So in <em>PincodeConference.php</em>:</p>
 
@@ -313,7 +313,7 @@ if ($eventName == "CalledNumber") {
 				  \"dial\": {
 						\"conferenceName\": \"" . $digitsLessHash . "\",
 						\"conferenceProperties\": {
-							\"mute\":false
+							\"startOnEnter\":true
 						}
 					    }
 					}
@@ -329,7 +329,7 @@ if ($eventName == "CalledNumber") {
 				  \"dial\": {
 						\"conferenceName\": \"" . $digitsLessHash . "\",
 						\"conferenceProperties\": {
-							\"mute\":true
+							\"startOnEnter\":false
 						}
 					    }
 					}
@@ -344,13 +344,13 @@ if ($eventName == "CalledNumber") {
 
 <ul>
 <li>If the URL attribute for <em>‘state’</em>, specified in <em>eventHandler.php</em> is equal to moderator, then the caller is placed into a conference name that equals the pincode that the caller entered.</li>
-  <li>The moderator is added to the conference with the additional <em>conferenceProperties - “mute”=false</em>.  When the moderator enters the conference any previous participants who may have been muted, will be able to hear each other</li>
+  <li>The moderator is added to the conference with the additional <em>conferenceProperties - “startOnEnter”:true</em>.  When the moderator enters the conference any previous participants who may have been muted, will be able to hear each other</li>
   <li>
 <strong>NOTE:</strong> that as the caller entered a hash (#) to complete their keypad input this has to be removed, prior to using the input as a conferenceName. This is done here:<br><ul>
 <li><em>$digitsLessHash = str_replace(“#”, “”, $digitsCollected)</em></li>
     </ul>
 </li>
-  <li>Any participant is added to the conference with the additional <em>conferenceProperties - mute=true</em>  When a participant enters the conference they will be muted until the moderator joins.</li>
+  <li>Any participant is added to the conference with the additional <em>conferenceProperties - “startOnEnter”:false</em>  When a participant enters the conference they will be muted until the moderator joins.</li>
 </ul>
 <p>That’s it. With a few lines of code you have created a dial in conference service on your BlueVia Voice Number that supports multiple conferences, based on a pin-code access. This demo will allow you to have multiple conferences hosted from the same BlueVia voice Number.</p>
 

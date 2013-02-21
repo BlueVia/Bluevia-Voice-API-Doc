@@ -126,7 +126,7 @@ em {
 
 <p>During a call BlueVia may send notifications for in-call events that occur during a calls. BlueVia will HTTP POST these in call event notifications to the callback URL assigned to your number, or alternatively, if you have over-ridden the callback URL via a HTTP POST made to the <a href="../restref/callcollection/">Calls resource</a>. </p>
 
-<p>For an inbound call to your <a href="https://bluevia.com">BlueVia Voice Number</a> a CalledNumber event is always HTTP POSTed to the callback URL associated with your number. Every time your BlueVia Voice Number is called, you will always receive a notification of this, via a <em>CalledNumber</em> event on your callback URL.</p>
+<p>For an inbound call to your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Number</a> a CalledNumber event is always HTTP POSTed to the callback URL associated with your number. Every time your BlueVia Voice Number is called, you will always receive a notification of this, via a <em>CalledNumber</em> event on your callback URL.</p>
 
 <p>For an outbound call, created by a HTTP POST to the <a href="../restref/callcollection/">Calls resource</a> the first <em>Answered</em> event is always sent to the callback URL associated with the BlueVia Voice Number. The callback URL associated with your BlueVia Voice Number, can of course be over-ridden every time a HTTP POST request is made to the <a href="../restref/callcollection/">Calls resource</a>. As a result you can create a call specific callback URL should you wish to, that will receive call event notifications.</p>
 
