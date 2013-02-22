@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -124,7 +34,7 @@ em {
         </ul>
 <h1 id="modifying-an-existing-call-using-the-bluevia-voice-restful-api">Modifying An Existing Call Using The BlueVia Voice RESTful API</h1>
 
-<p>If we update <em>makeACall.php</em> we can modify the existing call created in the <a href="../restapicreatecall">previous quick start demo</a>. Looking back at that demo, the last section of code retrieved the CallID created from the HTTP POST request to the <a href="../../restref/calls">Calls Resource</a> That code again:</p>
+<p>If we update <em>makeACall.php</em> we can modify the existing call created in the <a href="../restapicreatecall/">previous quick start demo</a>. Looking back at that demo, the last section of code retrieved the CallID created from the HTTP POST request to the <a href="../../restref/calls/">Calls Resource</a> That code again:</p>
 
 <pre><code>// Retrieve the call ID created for this call resource.
 // Not required for the demo, but shows how you can access it.
@@ -132,11 +42,16 @@ $obj = json_decode($body);
 $callId = $obj-&gt;{'callId'};
 </code></pre>
 
-<p>Using this call ID you can format the URL to mage a HTTP GET request to the <a href="../../restref/calls">Calls Resource</a>, in order to get the current state of the state of the call. As an example simply append add the call ID to the end of the calls resource URL and paste into a browser. This will retrieve the current state of a call i.e. HTTP GET https://<strong>update BlueVia API Host Here</strong>/comms/v1/calls/<strong>callID</strong></p>
+<p>Using this call ID you can format the URL to mage a HTTP GET request to the <a href="../../restref/calls/">Calls Resource</a>, in order to get the current state of the state of the call. As an example simply append add the call ID to the end of the calls resource URL and paste into a browser. This will retrieve the current state of a call i.e. HTTP GET https://<strong>update BlueVia API Host Here</strong>/comms/v1/calls/<strong>callID</strong></p>
 
-<p>You can also use this callID in order to modify the call, by using <em>/setcommands</em> i.e. a HTTP POST request to  https://<strong>update BlueVia API Host Here</strong>/comms/v1/calls/<strong>callID</strong>/setcommands, on the calls resource. This can be seen following in the updated <em>makeACall.php</em> script which you can you can find in the Quick Start demo code from github. </p>
+<p>You can also use this callID in order to modify the call, by using <em>/setcommands</em> i.e. a HTTP POST request to:</p>
 
-<p>Looking at the updated additional code, that is simply added after the <a href="../restapicreatecall">original call has been created</a>:</p>
+<pre><code>https://live-api-nv.bluevia.com:10443/comms/v1/calls/**callID**/setcommands, 
+</code></pre>
+
+<p>on the calls resource. This can be seen following in the updated <em>makeACall.php</em> script which you can you can find in the Quick Start demo code from github. </p>
+
+<p>Looking at the updated additional code, that is simply added after the <a href="../restapicreatecall/">original call has been created</a>:</p>
 
 <pre><code>//
 // Use setCommands to modify the call created Above
@@ -167,7 +82,7 @@ $bodyContent = "{
 $url = $url . "/" . $callId . "/" . $setcommands;
 </code></pre>
 
-<p>This is the formatted URL as discussed above - https://<strong>update BlueVia API Host Here</strong>/comms/v1/calls/<strong>callID</strong>/setcommands</p>
+<p>This is the formatted URL as discussed above - https://live-api-nv.bluevia.com:10443/comms/v1/calls/<strong>callID</strong>/setcommands</p>
 
 <pre><code>// CREATE CURL RESOURCE AND SET OPTIONS
 $ch = curl_init();
@@ -193,9 +108,27 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 <p>Then finally you simply format the HTTP POST request and make the request passing in the commands. Simple. couldn’t be easier right? ;-)</p>
 
-<p><strong>NOTE:</strong> There is also the option of passing in the callback URL into the setcommands HTTP POST request. In this case you would not pass in the commands in the body of the HTTP POST request, but instead a callback URL to a location that specifies the commands. This is discussed further in the <a href="../../restref/calls">Calls Resource</a>  documentation</p>
+<p><strong>NOTE:</strong> There is also the option of passing in the callback URL into the setcommands HTTP POST request. In this case you would not pass in the commands in the body of the HTTP POST request, but instead a callback URL to a location that specifies the commands. This is discussed further in the <a href="../../restref/calls/">Calls Resource</a>  documentation</p>
 
-<p>So you have seen how to create a call using the BlueVia RESTful API. Have a look at the next quick start guide to see how you can <a href="../restapicreateconf">create conference calls</a> using the API.</p>
+<p>So you have seen how to create a call using the BlueVia RESTful API. Have a look at the next quick start guide to see how you can <a href="../restapicreateconf/">create conference calls</a> using the API.</p>
+
+<!-- Bluevia  -->
+
+<!-- Overview -->
+
+<!-- Quick start -->
+
+<!-- Restref -->
+
+<!-- Command ref -->
+
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
+<!-- Roadmap -->
+
+<!-- Play -->
 
 
         <hr>
@@ -294,80 +227,71 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -421,9 +345,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -439,15 +360,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -585,8 +497,17 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

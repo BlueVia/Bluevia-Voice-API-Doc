@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -130,38 +40,38 @@ em {
 
 <ul>
 <li>
-<a href="../../commandref/dial">Dial numbers and conferences</a>. This command allows you to add a participant into a call, i.e. add a call leg. It also allows you to create a named conference call that you can add further participants into. To manage these different call scenarios there are Dial subcommands:
+<a href="../../commandref/dial/">Dial numbers and conferences</a>. This command allows you to add a participant into a call, i.e. add a call leg. It also allows you to create a named conference call that you can add further participants into. To manage these different call scenarios there are Dial subcommands:
     <ul>
-<li>You can add a new participant to a call by <a href="../../commandref/dial#number">Dialing their Number</a>
+<li>You can add a new participant to a call by <a href="../../commandref/dialnumber/">Dialing their Number</a>
 </li>
-      <li>You can create a conference or add a new participant into a conference by <a href="../../commandref/dial#conference">Dialing specifying a conference name</a>
+      <li>You can create a conference or add a new participant into a conference by <a href="../../commandref/dialconference/">Dialing specifying a conference name</a>
 </li>
-      <li>You can merge calls by <a href="../../commandref/dial#callid">Dialing using an existing callId</a>
+      <li>You can merge calls by <a href="../../commandref/dialcallid/">Dialing using an existing callId</a>
 </li>
     </ul>
 </li>
   <li>
-<a href="../../commandref/speak">Specify content to be spoken on a call</a>. Using this command you can specify text that will be spoken on a specific leg or legs of a call.</li>
+<a href="../../commandref/speak/">Specify content to be spoken on a call</a>. Using this command you can specify text that will be spoken on a specific leg or legs of a call.</li>
   <li>
-<a href="../../commandref/play">Specify content to be streamed on a call</a>. This allows you to stream MP3 or WAV file content to a specific leg or legs of a call.</li>
+<a href="../../commandref/play/">Specify content to be streamed on a call</a>. This allows you to stream MP3 or WAV file content to a specific leg or legs of a call.</li>
   <li>
-<a href="../../commandref/getdigits">Request to get DTMF input from a caller</a>. With this you can request to retrieve DTMF input, i.e. input from your Customers keypad. </li>
+<a href="../../commandref/getdigits/">Request to get DTMF input from a caller</a>. With this you can request to retrieve DTMF input, i.e. input from your Customers keypad. </li>
   <li>
-<a href="../../commandref/record">Record a call</a>. If you want to record a specific leg or legs of a call you can do so using the Record command</li>
+<a href="../../commandref/record/">Record a call</a>. If you want to record a specific leg or legs of a call you can do so using the Record command</li>
   <li>
-<a href="../../commandref/hangup">End a call</a>. With this command you can terminate in progress calls or terminate specific in progress call legs.</li>
+<a href="../../commandref/hangup/">End a call</a>. With this command you can terminate in progress calls or terminate specific in progress call legs.</li>
   <li>
-<a href="../../commandref/wait">Put a call in a wait state</a>. Using the Wait command you can put a delay between commands executed on a call.</li>
+<a href="../../commandref/wait/">Put a call in a wait state</a>. Using the Wait command you can put a delay between commands executed on a call.</li>
   <li>
-<a href="../../commandref/redirect">Redirect a call to accept new commands</a>. Using the Redirect command you can provide additional commands to an inprogress call.</li>
+<a href="../../commandref/redirect/">Redirect a call to accept new commands</a>. Using the Redirect command you can provide additional commands to an inprogress call.</li>
 </ul>
 <p><strong>and coming soon</strong> </p>
 
 <ul>
 <li>
-<a href="../../commandref/sms">Send an SMS from your BlueVia Voice Numbers</a>. Although not supported during the alpha period, after commercial launch, you will be able to send and receive SMS to certain BlueVia Voice Numbers. Functionality for inbound SMS will be limited to certain countries, however you will be able to send SMS, using the SMS command, globally. </li>
+<a href="../../commandref/sms/">Send an SMS from your BlueVia Voice Numbers</a>. Although not supported during the alpha period, after commercial launch, you will be able to send and receive SMS to certain BlueVia Voice Numbers. Functionality for inbound SMS will be limited to certain countries, however you will be able to send SMS, using the SMS command, globally. </li>
 </ul>
-<hr>
+<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -257,80 +167,71 @@ em {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -384,9 +285,6 @@ em {
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -402,15 +300,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -548,8 +437,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

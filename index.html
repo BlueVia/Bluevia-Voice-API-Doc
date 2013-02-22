@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -128,28 +38,46 @@ em {
 
 <p>The launch of the BlueVia Voice APIs marks the first time that any mobile carrier has exposed their voice assets through a zero touch interface - that’s right you don’t need to fill out reams of documentation to play! Simply join the alpha, we will give you some numbers for free, and you can play within minutes! Have a look at the <a href="alpha/quickstart/">BlueVia Voice API Quick Start Guide</a> to see how easy it is to play with our network. </p>
 
-<p>The following diagram provides a glipse of how we are providing access to the PSTN network from your application servers. Your Customers call your BlueVia Voice Numbers and we route the calls to you. You then tell us exactly what you would like to do with the calls via our <a href="alpha/overview/restapi">REST API</a> or via <a href="alpha/overview/callcontrol">Call Commands</a>. Its simple!</p>
+<p>The following diagram provides a glipse of how we are providing access to the PSTN network from your application servers. Your Customers call your BlueVia Voice Numbers and we route the calls to you. You then tell us exactly what you would like to do with the calls via our <a href="alpha/overview/restapi/">REST API</a> or via <a href="alpha/overview/callcontrol/">Call Commands</a>. Its simple!</p>
 
 <p><img src="img/BV_Voice_Overview.png" alt="Alt text"></p>
 
 <p>It could not be easier to add voice functionality into your application using our APIs they are that simple to use. Here are the basics:</p>
 
 <ul>
-<li><a href="alpha/overview/configure">Configure your BlueVia Voice number</a></li>
+<li><a href="alpha/overview/configure/">Configure your BlueVia Voice number</a></li>
   <li>Call it. Of course to do something a little more advance please have a look at the <a href="alpha/quickstart/">BlueVia Voice API Quick Start Guide</a> </li>
 </ul>
 <p>It’s that simple. In fact during the alpha period we had made this even simpler by:</p>
 
 <ul>
-<li>Giving you numbers to play with, all you have to do is <a href="alpha/overview/configure">Configure your BlueVia Voice number</a>
+<li>Giving you numbers to play with, all you have to do is <a href="alpha/overview/configure/">Configure your BlueVia Voice number</a>
 </li>
-  <li>We have also made <strong>using these numbers free</strong>, for the alpha period only. This will allow you to explore The BlueVia Voice API, completely free of charge. Once the alpha period is complete, inbound and outbound calls to BlueVia Voice numbers will be charged. See the <a href="alpha/overview/pricing">BlueVia Voice API pricing</a> for further details on API usage charges. </li>
+  <li>We have also made <strong>using these numbers free</strong>, for the alpha period only. This will allow you to explore The BlueVia Voice API, completely free of charge. Once the alpha period is complete, inbound and outbound calls to BlueVia Voice numbers will be charged. See the <a href="alpha/overview/pricing/">BlueVia Voice API pricing</a> for further details on API usage charges. </li>
   <li>
-<strong>NOTE:</strong> That outbound calls from your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice numbers</a> to phones does have a cost. For all call pricing information, refer to the <a href="alpha/overview/pricing">BlueVia Voice API pricing</a>. Also for information about adding balance to your account, such that you can make outbound calls, refer to the <a href="alpha/overview/balance">Adding balance to your BlueVia account</a> section.</li>
+<strong>NOTE:</strong> That outbound calls from your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice numbers</a> to phones does have a cost. For all call pricing information, refer to the <a href="alpha/overview/pricing/">BlueVia Voice API pricing</a>. Also for information about adding balance to your account, such that you can make outbound calls, refer to the <a href="alpha/overview/balance/">Adding balance to your BlueVia account</a> section.</li>
 </ul>
 <p>The BlueVia Voice API can be used in either of two ways (or a combination of both!). BlueVia Voice can be engaged via a <a href="alpha/restref/">RESTful API</a> or via <a href="alpha/commandref/">Call Control Commands</a> that you provide to BlueVia.</p>
 
 <p>Read on to find out more!</p>
+
+<!-- Bluevia  -->
+
+<!-- Overview -->
+
+<!-- Quick start -->
+
+<!-- Restref -->
+
+<!-- Command ref -->
+
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
+<!-- Roadmap -->
+
+<!-- Play -->
 
 
         <hr>
@@ -248,80 +176,71 @@ em {
 <li>
                   <a href="alpha/restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="alpha/restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="alpha/restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="alpha/restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="alpha/restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="alpha/restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="alpha/restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="alpha/restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="alpha/restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="alpha/restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="alpha/restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="alpha/restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="alpha/restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="alpha/restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="alpha/restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="alpha/restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="alpha/restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="alpha/restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="alpha/restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="alpha/restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="alpha/restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -375,9 +294,6 @@ em {
                   <a href="alpha/commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="alpha/commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="alpha/commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -393,15 +309,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="alpha/errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="alpha/errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -539,8 +446,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

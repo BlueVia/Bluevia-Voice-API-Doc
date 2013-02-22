@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -129,10 +39,10 @@ em {
 <p><img src="../../../img/outbound_call.png" alt="Alt text"></p>
 
 <ol>
-<li>The 1st leg of a call can be created by a <a href="../../restref/callcollection">HTTP POST to the BlueVia Calls resource</a>
+<li>The 1st leg of a call can be created by a <a href="../../restref/callcollection/">HTTP POST to the BlueVia Calls resource</a>
 </li>
   <li>This will result in the destination address, provided in the POST HTTP request body, to start ringing.</li>
-  <li>When the destination phone is answered, Bluevia makes a HTTP POST request to the URL configured by you on you BlueVia Voice Number. See <a href="../configure">Configuring your BlueVia number</a>. Although you have a callback URL configured on your number you can override this by specifying an alternative URL in the body of the POST HTTP request used to create the call.</li>
+  <li>When the destination phone is answered, Bluevia makes a HTTP POST request to the URL configured by you on you BlueVia Voice Number. See <a href="../configure/">Configuring your BlueVia number</a>. Although you have a callback URL configured on your number you can override this by specifying an alternative URL in the body of the POST HTTP request used to create the call.</li>
   <li>Upon receiving the HTTP POST notification from BlueVia (Further detail about <a href="../../notifications/">BlueVia Voice API notifications</a>), which lets you know the destination address has answered the call, you are then able to manage the call control functionality. At this stage you could provide a HTTP response to the BlueVia Voice Call Notification to specify what functionality you wish to enact on the call. Within the response you can specify the Call Control commands you wish to execute on the call. </li>
   <li>Alternatively you may wish to continue engaging with the call via a POST to the calls resource specifying the callID returned to you in you original POST request to create the call. The choice is yours.</li>
 </ol>
@@ -141,12 +51,29 @@ em {
 <p><img src="../../../img/outbound_call.png" alt="Alt text"></p>
 
 <ol>
-<li>When your BlueVia Voice Number is called BlueVia makes a HTTP POST request to the URL that you have configured on your BlueVia Voice Number. See <a href="../configure">Configuring your BlueVia number</a>. </li>
+<li>When your BlueVia Voice Number is called BlueVia makes a HTTP POST request to the URL that you have configured on your BlueVia Voice Number. See <a href="../configure/">Configuring your BlueVia number</a>. </li>
   <li>This POST request will contain the data you need to engage with your Customer. Such as the number of the person who has called etc… See <a href="../../notifications/">BlueVia Voice API notifications</a> for the complete set of data that is available or each notification that can be sent by BlueVia to your application server. </li>
   <li>When you receive the notification from BlueVia you can decide how you wish to engage with the inbound call. At this stage, you may wish to respond to the HTTP POST request made by BlueVia to your application server, or alternatively, as with the outbound call scenario you may wish to modify the call via an API request.  </li>
 </ol>
 <p>These flows are simply examples though. You can choose to use any combination of Call Control Commands and API calls that you wish to. These flows are based on the standard notifications that are received for in progress calls. If you wish to, you can specify to receive notifications for all in call events that are received by BlueVia. By <a href="../../notifications/">managing BlueVia Voice Call Notifications</a> you can create feature rich call flows by having access to notifications for every facet of an existing call. </p>
 
+<!-- Bluevia  -->
+
+<!-- Overview -->
+
+<!-- Quick start -->
+
+<!-- Restref -->
+
+<!-- Command ref -->
+
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
+<!-- Roadmap -->
+
+<!-- Play -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -244,80 +171,71 @@ em {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -371,9 +289,6 @@ em {
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -389,15 +304,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -535,8 +441,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

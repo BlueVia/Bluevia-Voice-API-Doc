@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -126,10 +36,27 @@ em {
 
 <p><strong>NOTE</strong> During the alpha period call charges will be free. There is no need to add credit to our account.</p>
 
-<p>You can add balance to your BlueVia account via the <a href="https://www.bluevia.com">BlueVia dashboard</a>. You have to be signed in to add balance to your account. If you haven’t already you can <a href="https://bluevia.com/en/user/register/type/B">create your BlueVia Account</a> prior to adding balance. Payment can be made via credit card.</p>
+<p>You can add balance to your BlueVia account via the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia dashboard</a>. You have to be signed in to add balance to your account. If you haven’t already you can <a href="https://nv.bluevia.com/en/user/register">create your BlueVia Account</a> prior to adding balance. Payment can be made via credit card.</p>
 
 <p>You are also able to set up an auto-topup through the payment pages, which will allow for the automatic addition of further balance to your account, should your balance fall below the specified threshold. Please note during the alpha period the balance threshold is fixed. Keep your eyes on the <a href="../../roadmap/">BlueVia Roadmap</a> to see when you will be able to specify the balance topup threshold setting specific to your account.      </p>
 
+<!-- Bluevia  -->
+
+<!-- Overview -->
+
+<!-- Quick start -->
+
+<!-- Restref -->
+
+<!-- Command ref -->
+
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
+<!-- Roadmap -->
+
+<!-- Play -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -227,80 +154,71 @@ em {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -354,9 +272,6 @@ em {
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -372,15 +287,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -518,8 +424,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

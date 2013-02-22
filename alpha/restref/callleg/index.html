@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -126,11 +36,10 @@ em {
 
 <h2 id="call-leg">Call Leg</h2>
 
-<pre><code> /comms/v1/calls/{callId}/legs/{legId}{format}?QueryParams
-</code></pre>
+<p>/comms/v1/calls/{callId}/legs/{legId}{format}?QueryParams</p>
 
 <div class="apimethodgroup well well-small">
-  <dl class="apimethod" id="postmethod" data-toggle="collapse" data-target="#postdoc">
+  <dl>
 <dt>POST</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
@@ -141,9 +50,11 @@ em {
 <div class="apimethodgroup well well-small">
   <dl>
 <dt>GET</dt>
-    <dd>YES
-  * This allows you to request specific information about the call leg represented by the {legId}</dd>
+    <dd>YES</dd>
   </dl>
+<ul>
+<li>This allows you to request specific information about the call leg represented by the {legId}</li>
+  </ul>
 <p class="apimethod" id="postmethod" data-toggle="collapse" data-target="#getdoc"><i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available --></p>
   <!-- This HTML doesn't need changes -->
   <div class="apidoc collapse in tabable offset1" id="postdoc">
@@ -154,27 +65,26 @@ em {
 <div class="tab-content">
 <div id="tab1" class="tab-pane active">
         <ul>
-<li>HTTP Method 
-  :GET</li>
-          <li>
+<li>
             <dl>
-<dt>Supported Query Parameters:</dt>
+<dt>Query Parameters:</dt>
               <dd>
                 <dl>
 <dt>Filter(optional)</dt>
                   <dd>To apply a filter on the response, i.e.: to retrieve only some fields of the Call Leg. The name of query parameter is fields and itÆs value is a list of comma separated values of the different fields that are requested. The filter can be applied at top level fields within an Call Leg</dd>
-                  <dd>
-                    <dl>
+                </dl>
+</dd>
+              <dd>
+                <dl>
 <dt>Example</dt>
-                      <dd>?fields=callerId,lastUpdated</dd>
-                    </dl>
+                  <dd><code>?fields=callerId,lastUpdated</code></dd>
+                </dl>
 </dd>
-                  <dd>
-                    <dl>
+              <dd>
+                <dl>
 <dt>Note</dt>
-                      <dd>legId field is always returned, even if not included in the filter.</dd>
-                    </dl>
-</dd>
+                  <dd>
+<em>legId</em> field is always returned, even if not included in the filter.</dd>
                 </dl>
 </dd>
             </dl>
@@ -183,8 +93,17 @@ em {
             <dl>
 <dt>Body</dt>
               <dd>The GET does not include a body.</dd>
-              <dd>CURL example
-          @todo get one</dd>
+            </dl>
+</li>
+          <li>
+            <dl>
+<dt>Example</dt>
+              <dd>
+<strong>CURL</strong>
+
+                <pre><code>  @todo get one
+</code></pre>
+              </dd>
             </dl>
 </li>
         </ul>
@@ -213,34 +132,32 @@ em {
               <dd>
 <strong>JSON</strong>
 
-                <p>~~~
-{</p>
+                <pre><code>{
+      
+          "callLegId":
+        "328482ac-e3a2-4152-8b67-18ba0c84ef33",
+              "callerId": "tel: +34666666669",
+          "destination": "tel: +34666666666",
+          "legStatus": "Answered",
+              "direction": "Outbound",
+          "duration": "110",
+          "callLegCost": {
+              "amount": 6.33,
+            },
+          "createdAt": "2012-05-16T14:00:10",
+          "lastUpdated": "2012-05-16T14:02:00",
+}
+</code></pre>
+              </dd>
+              <dd>
+                <p><strong>XML</strong></p>
 
-                <pre><code>                "callLegId":
-            "328482ac-e3a2-4152-8b67-18ba0c84ef33",
-					"callerId": "tel: +34666666669",
-                "destination": "tel: +34666666666",
-                "legStatus": "Answered",
-                	"direction": "Outbound",
-                "duration": "110",
-                "callLegCost": {
-               		"amount": 6.33,
- 	 					},
-                "createdAt": "2012-05-16T14:00:10",
-                "lastUpdated": "2012-05-16T14:02:00",
- 	}
+                <pre><code>  @todo get one
 </code></pre>
               </dd>
             </dl>
 </li>
-        </ul>
-
- 	~~~
-
-        <p>: <strong>XML</strong></p>
-
-        <ul>
-<li>
+          <li>
             <dl>
 <dt>Error response</dt>
               <dd>Consists of an HTTP Error response together with a code and an explanatory text. Possible errors are those applicable among the errors described in <a href="../../errorcodes/">BlueVia Voice Error Codes</a>.</dd>
@@ -255,7 +172,7 @@ em {
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#putdoc">
+  <dl>
 <dt>PUT</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
@@ -264,7 +181,7 @@ em {
 <!-- apimethodgroup -->
 
 <div class="apimethodgroup well well-small">
-  <dl class="apimethod" id="getmethod" data-toggle="collapse" data-target="#deletedoc">
+  <dl>
 <dt>DELETE</dt>
     <dd>NOT ALLOWED</dd>
   </dl>
@@ -276,38 +193,19 @@ em {
 
 <!-- Overview -->
 
+<!-- Quick start -->
+
 <!-- Restref -->
-
-<!-- account -->
-
-<!-- accountresources-->
-
-<!--Resources-->
-
-<!--accountnumber -->
-
-<!--availablenumberscollection-->
-
-<!--Calls Resources -->
-
-<!--call-->
-
-<!--callcollection-->
-
-<!--Callegscollection-->
-
-<!--index-->
-
-<!--Recordings-->
-
-<!-- Notifications -->
 
 <!-- Command ref -->
 
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
 <!-- Roadmap -->
 
-<!-- Error codes -->
-
+<!-- Play -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -405,80 +303,71 @@ em {
 <li>
                   <a href="../request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="./">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="./">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -532,9 +421,6 @@ em {
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -550,15 +436,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -696,8 +573,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

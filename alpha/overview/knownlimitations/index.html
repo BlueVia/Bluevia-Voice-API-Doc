@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -128,14 +38,14 @@ em {
 
 <p>The following provides an overview of immediate limitations that you should be aware of. It’s probably a good idea to give these an initial skim read so you can refer back to them when you start playing with the functionality.</p>
 
-<p>If there is something further, not listed here that is causing you issues, please contact us immediately, so we can see if there is an immediate solution for you, or alternatively so we can turn around a solution for you. As always please send any issues to <a href="mailto:support@bluevia.com">support@bluevia.com</a>, or alternatively <a href="mailto:murray@bluevia.com">murray@bluevia.com</a>. Also follow, and contact us at twitter <a href="http://www.twitter.com/bluevia">@BlueVia</a>.</p>
+<p>If there is something further, not listed here that is causing you issues, please contact us immediately, so we can see if there is an immediate solution for you, or alternatively so we can turn around a solution for you. As always please send any issues to <a href="mailto:support@bluevia.com">support@bluevia.com</a>, or alternatively <a href="mailto:murray@bluevia.com">murray@bluevia.com</a>. Also follow, and contact us at twitter <a href="http://twitter.com/BlueVia">@BlueVia</a>.</p>
 
 <h2 id="exporting-recordings">Exporting Recordings</h2>
 
-<p>Currently you can only use the <em>export functionality</em> for the <a href="../../commandref/record">record command</a>. Initially during the alpha we will not be hosting any recordings you make on our servers. For our release 1.0 we will be supporting the hosting of recordings. There are a few things that you should be aware of:</p>
+<p>Currently you can only use the <em>export functionality</em> for the <a href="../../commandref/record/">record command</a>. Initially during the alpha we will not be hosting any recordings you make on our servers. For our release 1.0 we will be supporting the hosting of recordings. There are a few things that you should be aware of:</p>
 
 <ul>
-<li>You can only play back the recording you have made when it is available on your server. BlueVia will have to have completed the HTTP POST of your recording to either your server (or as you can see in the <a href="../../commandref/record">record command</a> description, initially we will also allow you to export your recording to Amazon Web Services S3 storage). This is not a major issue for small recordings, for example the recording of a conference participants name, but immediate playback of longer recordings may be an issue. BlueVia will only POST to the recording to your chosen export location once the recording has been completed. </li>
+<li>You can only play back the recording you have made when it is available on your server. BlueVia will have to have completed the HTTP POST of your recording to either your server (or as you can see in the <a href="../../commandref/record/">record command</a> description, initially we will also allow you to export your recording to Amazon Web Services S3 storage). This is not a major issue for small recordings, for example the recording of a conference participants name, but immediate playback of longer recordings may be an issue. BlueVia will only POST to the recording to your chosen export location once the recording has been completed. </li>
   <li>We are going to add a post complete notification to allow developers to know exactly when a recording export has been completed. </li>
 </ul>
 <h2 id="purchasing-numbers">Purchasing Numbers</h2>
@@ -147,7 +57,7 @@ em {
   <li>The UK and</li>
   <li>Germany.</li>
 </ul>
-<p>These numbers are free for your use during the alpha period. Once the alpha has completed these numbers will be charged for, against the balance in your account. Please see the <a href="../pricing">BlueVia Voice API Costs</a> to see the monthly fees for keeping BlueVia Voice Numbers</p>
+<p>These numbers are free for your use during the alpha period. Once the alpha has completed these numbers will be charged for, against the balance in your account. Please see the <a href="../pricing/">BlueVia Voice API Costs</a> to see the monthly fees for keeping BlueVia Voice Numbers</p>
 
 <h2 id="sms-support">SMS Support</h2>
 
@@ -159,7 +69,7 @@ em {
 
 <p>This also includes error notifications. This poses an issue for inbound calls to your numbers as it is not possible to see errors generated as a result of inbound calls. We are working on providing error reporting on the portal, for debugging purposes. This will greatly aid in the analysis of issues. In the meantime, in the event that an error is due to the JSON or XML being incorrectly defined there is a way to test this:</p>
 
-<p>If you create a call using the <a href="../../restref/callcollection">/calls resource</a>, you can then modify that call and pass in either XML or JSON commands. See the <a href="../../quickstart/modifycall">Modifying an existing call quick start guide</a>. If there is an issue with your XML or JSON then this will be seen when you make an API call to the calls resource and pass in commands using the setcommands feature, allowing you to modify a call.</p>
+<p>If you create a call using the <a href="../../restref/callcollection/">calls resource</a>, you can then modify that call and pass in either XML or JSON commands. See the <a href="../../quickstart/modifycall/">Modifying an existing call quick start guide</a>. If there is an issue with your XML or JSON then this will be seen when you make an API call to the calls resource and pass in commands using the setcommands feature, allowing you to modify a call.</p>
 
 <p>We are working to expose a report on the BlueVia portal that will highlight all errors that occur on your numbers</p>
 
@@ -168,6 +78,24 @@ em {
 <h2 id="restful-api">RESTful API</h2>
 
 <p>Full resource access within the <a href="../../restref/">BlueVia RESTful API</a> is not available in the alpha release. The limitations within the API are highlighted within the RESTful API reference.</p>
+
+<!-- Bluevia  -->
+
+<!-- Overview -->
+
+<!-- Quick start -->
+
+<!-- Restref -->
+
+<!-- Command ref -->
+
+<!-- Notifications -->
+
+<!-- Error codes  -->
+
+<!-- Roadmap -->
+
+<!-- Play -->
 
 
         <hr>
@@ -266,80 +194,71 @@ em {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -393,9 +312,6 @@ em {
                   <a href="../../commandref/sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../../commandref/commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../../commandref/commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -411,15 +327,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -557,8 +464,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 

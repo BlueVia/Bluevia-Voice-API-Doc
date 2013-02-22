@@ -7,97 +7,7 @@
 <meta name="MSSmartTagsPreventParsing" content="true">
 <title></title>
 <link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
-<style type="text/css">
-  h1, h2, h3, h4, h5 {
-    color: #006595;
-  }
-  .page-header {
-    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
-    border: none;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-  .page-footer {
-    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
-    padding-top: 10px;
-  }
-  .page-footer h4 {
-    color: #47C3D3;
-    display: block;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .page-footer li {
-    border-bottom: #CCC 1px dotted;
-  }
-  .page-footer li a{
-    font-style: italic;
-    font-family: Georgia,"Times New Roman",Times,serif;
-    list-style: none;
-    display: list-item;
-    line-height: 28px;
-    font-size: 13px;
-    color: #666;
-    text-transform: lowercase;
-    letter-spacing: normal;
-    margin-bottom: 0;
-    margin-left: 0;
-  }
-    .page-footer li a:hover{
-      color: #000;
-      text-decoration: none;
-  }
-  a {
-    color: #47c3d3
-  }
-  a:hover {
-    text-decoration: none;
-    color: #006595;
-  }
-  #header .logo img {
-    vertical-align: baseline;
-  }
-  #header .logo span {
-    padding-bottom: 15px;
-  }
-  .accordion-toggle.inline {
-    display: inline-block;
-    background: #eee;
-    margin-right: 10px;
-  }
-.accordion-toggle.inline:hover {
-    background: #e6e6e6;
-  }
-.apidoc dd {
-  display: table-row;
-}
-.apidoc li {
-  list-style: none;
-}
-.apidoc .tab-pane > ul {
-  margin-left: 0px;
-}
-.well.apimethodgroup {
-  background: white;
-}
-.icon-chevron-down {
-  cursor: pointer;
-}
-.bottomLinks {
-  padding-bottom: 20px;
-}
-em {
-  //background: #eef;
-  color: #009;
-  border-bottom: 1px #009 dotted;
-}
-
-  </style>
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
 </head>
 <body class="api" data-spy="scroll" data-target=".sidemenu">
   <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
@@ -126,13 +36,11 @@ em {
 
 <p>The record command allows you to record a call, or part of a call. The entire call can be recorded or selected call legs can also be recorded.</p>
 
-<p>@todo figure out how to record a specific leg of a call and provide an example</p>
-
 <p>Within the <em>record</em> command, the following supporting elements can be provided:</p>
 
 <ul>
 <li>
-<em>timeout</em> - positive integer, default of 15 seconds. If there is silence on the call for this time period then the recording is stopped. @todo verify this</li>
+<em>timeout</em> - positive integer, default of 15 seconds. If there is silence on the call for this time period then the recording is stopped. </li>
   <li>
 <em>playBeep</em> - true/false - play a beep before recording, default false	</li>
   <li>
@@ -153,8 +61,7 @@ em {
 <em>export</em> - this element allows you to specify a location that BlueVia will make a HTTP PUT request to, in order to provide your recording to you. NOTE: for the alpha release of the BLueVia Voice API we don’t offer hosting support for the recordings made via the API. See the <a href="../../overview/knownlimitations/">Known Alpha Limitations</a> for all BLueVia Voice API alpha limitations.</li>
   <li>As this element can refer to external services there are various integrations supported. To use the export function to:
     <ul>
-<li>@todo complete the detail of the export to AWS and PUT on own server. Validate the detail that is here.</li>
-      <li>POST or PUT the recording on your server specify:
+<li>POST or PUT the recording on your server specify:
         <ul>
 <li>
 <em>actionUrl</em> - the URL that will handle the HTTP PUT request</li>
@@ -216,64 +123,8 @@ em {
 <strong>NOTE</strong>: As highlighted in the <a href="../../overview/knownlimitations/">Known Alpha Limitations</a> discussion, there may be a time period from the completion of the recording made by BlueVia, to the time that it is finished being PUT by BlueVia on your actionUrl. This is network dependant and largely out of the control of BlueVia. This should not be a problem with smaller files, such as in this case with the recording of the callers name prior to entering a conference, however if you are recording an entire call, there may be a time delay, upon completing the recording, to when you can actually use the recording, for example, if you want to stream the resultant recording using a <a href="../play/">play command</a> </li>
     </ul>
 </li>
-  <li>
-    <p>recording an entire call and posting the recording to Amazon Web Services S3 Storage (AWS)</p>
-
-    <pre><code>  @todo working AWS example
-</code></pre>
-  </li>
-  <li>
-    <p>recording a selected leg of a call and posting to AWS S3 Storage</p>
-
-    <pre><code>  @todo working AWS example
-</code></pre>
-  </li>
 </ul>
-<h2 id="xml-examples">XML Examples</h2>
-
-<p>The same record JSON commands can be described in XML as follows </p>
-
-<pre><code>@todo complete XML samples and validate
-</code></pre>
-
-<!-- Bluevia  -->
-
-<!-- Overview -->
-
-<!-- Restref -->
-
-<!-- account -->
-
-<!-- accountresources-->
-
-<!--Resources-->
-
-<!--accountnumber -->
-
-<!--availablenumberscollection-->
-
-<!--Calls Resources -->
-
-<!--call-->
-
-<!--callcollection-->
-
-<!--Callegscollection-->
-
-<!--index-->
-
-<!--Recordings-->
-
-<!-- Notifications -->
-
-<!-- Command ref -->
-
-<!-- Roadmap -->
-
-<!-- Error codes -->
-
-
-        <hr>
+<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -369,80 +220,71 @@ em {
 <li>
                   <a href="../../restref/request/">HTTP Request</a>
                 </li>
-              
+
                 <li>
                   <a href="../../restref/resources/">Resources</a>
-                
-
-
                   </li>
 <li>
                     <ul class="nav nav-list">
 <li>
                         <a href="../../restref/accountresources/">Account Management Resources</a>
-                            </li>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                  <a href="../../restref/account/">Account</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountnumber/">Account Number</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/recordings/">Recordings</a>
-                                </li>
-                              </ul>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
 </li>
-                      </ul>
-</li>
-
-
-
                       <li>
                         <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
                       </li>
                       <li>
                         <a href="../../restref/calls/">Calls Resources</a>
-                          </li>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
 <li>
-                              <ul class="nav nav-list">
-<li>
-                                <a href="../../restref/callcollection/">Call Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/call/">Call</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
-                                </li>
-                                <li>
-                                  <a href="../../restref/callleg/">Call Leg</a>
-                                </li>
-                              </ul>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
 </li>
-                      
                       <li>
                         <a href="../../restref/sms/">SMS Resources</a>
                       </li>
                     </ul>
-<li>
-                  <a href="../../restref/specificlegs/">Send Commands To Specific Legs</a>
-                </li>
+</li>
+                
+
                 <li>
                   <a href="../../restref/callstatuses/">Call Statuses</a>
                 </li>
                 <li>
                   <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
                 </li>
-              
-            </div>
+              </ul>
+</div>
           </div>
           </div>
           <div class="accordion-group">
@@ -496,9 +338,6 @@ em {
                   <a href="../sms/">SMS</a>
                 </li>
                 <li>
-                  <a href="../commandstospecificlegs/">Send Commands To Specific Legs</a>
-                </li>
-                <li>
                   <a href="../commandchains/">Command Chains</a>
                 </li>
               </ul>
@@ -514,15 +353,6 @@ em {
             <div class="accordion-heading">
               <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
             </div>
-          <div id="collapseErrorCodes" class="accordion-body collapse">
-            <div class="accordion-inner">
-              <ul class="nav nav-list">
-<li>
-                  <a href="../../errorcodes/">Subsection</a>
-                </li>
-              </ul>
-</div>
-          </div>
           </div>
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -660,8 +490,17 @@ em {
   // Previous and next links
   menuLinks = $("#sidebar a").not(".accordion-toggle");
   pageIndex = $(menuLinks).index($(pathtitle));
-  prevPage = $($(menuLinks)[pageIndex - 1]).clone();
-  nextPage = $($(menuLinks)[pageIndex + 1]).clone();
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
   $(prevPage).prepend("<< ");
   $(nextPage).append(" >>");
 
