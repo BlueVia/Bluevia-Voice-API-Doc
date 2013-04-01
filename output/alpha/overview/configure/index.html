@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="imagetoolbar" content="false">
+<meta name="MSSmartTagsPreventParsing" content="true">
+<title></title>
+<link href="../../../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="../../../css/bluevia_style.css" rel="stylesheet" media="screen">
+</head>
+<body class="api" data-spy="scroll" data-target=".sidemenu">
+  <script src="http://code.jquery.com/jquery-latest.js"></script><script src="../../../js/bootstrap.min.js"></script><div id="header-wrapper" class="page-header">
+    <div id="header" class="container-fluid">
+      <div class="row-fluid">
+        <a class="logo offset1" href="../../../">
+          <img src="http://bluevia.com/img/BlueVia-Hdr-Logo-SML.png" width="100" alt="Bluevia Logo"><span class="lightblue"></span>
+        </a>
+
+      </div>
+    </div>
+    <!-- #header --> </div>
+  <!-- #header-wrapper -->
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="content span8 offset1">
+
+        <ul class="breadcrumb">
+<li>
+<a href="../../../">Home</a> <span class="divider">/</span>
+</li>
+          <li class="active">
+        </ul>
+<h1 id="configuring-your-bluevia-numbers">Configuring Your BlueVia Numbers</h1>
+
+<p>From the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia dashboard</a> you will be able to configure any of the numbers on your account. The numbers that will be provided to you for the alpha will have a default configuration that you are able to modify through the dashboard. Also any number that you purchase, post alpha, will be able to be managed through the dashboard. </p>
+
+<p>It is also possible to configure your numbers using the <a href="../../restref/">BlueVia Voice REST API</a>.</p>
+
+<p>Initially there are two URLs to configure for each number. They are:</p>
+
+<p><strong>Firstly</strong> the <em>Voice Callback URL</em> - This URL is used by BlueVia to make HTTP POST requests for any notifications made to your application server. When BlueVia makes a request to this URL, that should point to your application server, if you choose to you can specify call control commands in the response. You should always respond with a HTTP 200 Success response, otherwise BlueVia may call our fallback URL unnecessarily. All <a href="../../notifications/">BlueVia Voice API Notifications</a> will be sent to this URL. </p>
+
+<p>The URL can either be HTTP endpoint or a HTTPS endpoint. BlueVia will automatically trust a HTTPS endpoint covered by a certificate from a trusted certificate authority,  Currently you cannot use a self signed certificate for your HTTPS endpoints. Only trusted certificates can be used.</p>
+
+<p><strong>Secondly</strong> the <em>Voice Fallback URL</em> - BlueVia will make a HTTP POST request to this URL in the event of any HTTP error that is generated while attempting to make a request to the callback URL associated with the Bluevia Voice Number. Should BlueVia make receive a HTTP 4xx or HTTP 5xx response as a result of a request to your callback URL then a HTTP POST request will be made to your fallback URL. </p>
+
+<p>Although it is not compulsory, it is a good idea, to host your fallback URL on a separate domain, or server, to your callback URL. This is as if BlueVia receives an error response from a HTTP request made to your callback URL, if the fallback URL is hosted on the same server, then there is a chance that this will fail as well. </p>
+
+<p>If you receive a request to your fallback URL you are able to gracefully manage a call in the event of a failure in your application server. You can specify call control commands in the response to a BlueVia request to your fallback URL, and you should always provide a HTTP 200 Success response to a request made to your fallback URL.</p>
+
+<p>If there is any error received by BlueVia as the result of a request to your fallback URL, BlueVia will not retry the request. Consequently any call functionality, in this case, will fail.</p>
+
+<p>During the alpha period there will not be any call failure reporting available on the BlueVia portal. Please refer to the <a href="../../roadmap/">BlueVia Voice API roadmap</a> to see when error and debugging reporting will be available for the APIs   </p>
+
+<p>When we add SMS support, for BlueVia Voice Numbers that have access to SMS, you will also be able to specify the SMS callback URL - the URL used by BlueVia to notify of an inbound SMS, and the SMS fallback URL - the URL used by BlueVia to notify of any HTTP errors encountered by BlueVia when trying to make a POST request to the SMS callback URL. These will also have a default configuration, that you can override, once SMS functionality is available, post the BlueVia Voice alpha release. </p>
+
+<p>In the same manner as you can override, voice callback and fallback URLs, you will be able to modify SMS callback and fallback URLs via the RESTful API that will be made available, post alpha release, that will provide access to a SMS resource. Please refer to the <a href="../../roadmap/">BlueVia Voice API roadmap</a> to see when SMS functionality will be available.    </p>
+
+
+        <hr>
+<span id="prevPage" class="bottomLinks pull-left"></span>
+        <span id="nextPage" class="bottomLinks pull-right"></span>
+
+      </div>
+
+      <div id="sidebar" class="span3">
+        <div class="accordion" id="accordionMenu">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionOverview" href="#collapseOverview"><i class="icon-chevron-down"></i></a><a href="../">Overview</a>
+            </div>
+          <div id="collapseOverview" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <ul class="js-guides nav nav-list sidemenu">
+<li>
+                  <a href="../restapi/">BlueVia Voice RESTful API</a>
+                </li>
+                <li>
+                  <a href="../callcontrol/">BlueVia Voice Call Control Commands</a>
+                </li>
+                <li>
+                  <a href="../callflows/">Call Flows</a>
+                </li>
+                <li>
+                  <a href="../existing/">Existing BlueVia APIs and the BlueVia Voice API</a>
+                </li>
+                <li>
+                  <a href="../balance/">Adding Balance To Your BlueVia Account</a>
+                </li>
+                <li>
+                  <a href="../numbers/">Buying Numbers</a>
+                </li>
+                <li>
+                  <a href="./">Configuring Your BlueVia Numbers</a>
+                </li>
+                <li>
+                  <a href="../usingnumbers/">Using Your BlueVia Voice Numbers</a>
+                </li>
+                <li>
+                  <a href="../pricing/">BlueVia Voice API Costs</a>
+                </li>
+                <li>
+                  <a href="../knownlimitations/">Known Alpha Limitations</a>
+                </li>
+              </ul>
+</div>
+          </div>
+
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionQuickstart" href="#collapseQuickstart"><i class="icon-chevron-down"></i></a><a href="../../quickstart/">Quick Start Guides</a>
+            </div>
+          <div id="collapseQuickstart" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <ul class="nav nav-list">
+<li>
+                  <a href="../../quickstart/connectcallnocode/">Connect a Call Without Code</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/createconfnocode/">Create a Conference Without Code</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/modifycall/">Modify An Existing Call</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/restapicreateconf/">Create A Conference Call With The REST API</a>
+                </li>
+                <li>
+                  <a href="../../quickstart/restapiupdateconfig/">Update Your Number's Config With The REST API</a>
+                </li>
+
+              </ul>
+</div>
+          </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRestRef" href="#collapseRestRef"><i class="icon-chevron-down"></i></a><a href="../../restref/">RESTful API Reference</a>
+            </div>
+          <div id="collapseRestRef" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <ul class="nav nav-list">
+<li>
+                  <a href="../../restref/request/">HTTP Request</a>
+                </li>
+
+                <li>
+                  <a href="../../restref/resources/">Resources</a>
+                  </li>
+<li>
+                    <ul class="nav nav-list">
+<li>
+                        <a href="../../restref/accountresources/">Account Management Resources</a>
+                      </li>
+                      <li>
+                        <ul class="nav nav-list">
+<li>
+                            <a href="../../restref/account/">Account</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountnumber/">Account Number</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
+                          </li>
+                          <li>
+                            <a href="../../restref/recordings/">Recordings</a>
+                          </li>
+                        </ul>
+</li>
+                      <li>
+                        <a href="../../restref/availablenumberscollection/">Available Numbers Collection</a>
+                      </li>
+                      <li>
+                        <a href="../../restref/calls/">Calls Resources</a>
+                      </li>
+                      <li>
+                          <ul class="nav nav-list">
+<li>
+                              <a href="../../restref/callcollection/">Call Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/call/">Call</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/calllegscollection/">Calls Leg Collection</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/callleg/">Call Leg</a>
+                            </li>
+                            <li>
+                              <a href="../../restref/modifycall/">Modify Call - Set Commands</a>
+                            </li>
+                          </ul>
+</li>
+                      <li>
+                        <a href="../../restref/sms/">SMS Resources</a>
+                      </li>
+                    </ul>
+</li>
+                
+
+                <li>
+                  <a href="../../restref/callstatuses/">Call Statuses</a>
+                </li>
+                <li>
+                  <a href="../../restref/calllegstatuses/">Call Leg Statuses</a>
+                </li>
+              </ul>
+</div>
+          </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionCommandRef" href="#collapseCommandRef"><i class="icon-chevron-down"></i></a><a href="../../commandref/">Call Control Commands Reference</a>
+            </div>
+          <div id="collapseCommandRef" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <ul class="nav nav-list">
+<li>
+                  <a href="../../commandref/sendingcallcommands/">Providing Call Commands</a>
+                </li>
+                <li>
+                  <a href="../../commandref/dial/">Dial</a>
+                </li>
+                <li>
+                  <ul class="nav nav-list">
+<li>
+                      <a href="../../commandref/dialnumber/">Dial Number</a>
+                    </li>
+                    <li>
+                      <a href="../../commandref/dialconference/">Dial Conference</a>
+                    </li>
+                    <li>
+                      <a href="../../commandref/dialcallid/">Dial Call Id</a>
+                    </li>
+                  </ul>
+</li>
+                <li>
+                  <a href="../../commandref/speak/">Speak</a>
+                </li>
+                <li>
+                  <a href="../../commandref/play/">Play</a>
+                </li>
+                <li>
+                  <a href="../../commandref/getdigits/">GetDigits</a>
+                </li>
+                <li>
+                  <a href="../../commandref/record/">Record</a>
+                </li>
+                <li>
+                  <a href="../../commandref/hangup/">HangUp</a>
+                </li>
+                <li>
+                  <a href="../../commandref/redirect/">Redirect</a>
+                </li>
+                <li>
+                  <a href="../../commandref/wait/">Wait</a>
+                </li>
+                <li>
+                  <a href="../../commandref/sms/">SMS</a>
+                </li>
+                <li>
+                  <a href="../../commandref/commandchains/">Command Chains</a>
+                </li>
+              </ul>
+</div>
+          </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionNotifications" href="#collapseNotifications"><i class="icon-chevron-down"></i></a><a href="../../notifications/">Notification Events Reference</a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionErrorCodes" href="#collapseErrorCodes"><i class="icon-chevron-down"></i></a><a href="../../errorcodes/">Voice and SMS Error Codes</a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionRoadmap" href="#collapseRoadmap"><i class="icon-chevron-down"></i></a><a href="../../roadmap/">Roadmap</a>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle inline" data-toggle="collapse" data-parent="#accordionPlay" href="#collapsePlay"><i class="icon-chevron-down"></i></a><a href="../../play/">Play ...</a>
+            </div>
+          <div id="collapsePlay" class="accordion-body collapse">
+            <div class="accordion-inner">
+              <ul class="nav nav-list">
+<li>
+                  <a href="../../play/">BBC Newsreader</a>
+                </li>
+                <li>
+                  <a href="../../play/panicbutton/">Rasberry Pi Panic Button</a>
+                </li>
+              </ul>
+</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /sidebar-module -->
+<div class="page-footer">
+  <div id="footer" class="container-fluid">
+    <div class="row-fluid">
+      <div class="footer_inner clearfix offset1">
+
+        <ul class="footer_nav span2 unstyled">
+<h4><a href="http://bluevia.com">Bluevia</a></h4>
+          <li>
+            <a href="https://bluevia.com/en/page/tour">Tour</a>
+          </li>
+          <li>
+            <a href="http://bluevia.com/ot-www/webroot/index.php/en/page/boilerplate.TermsAndConds">terms and conditions</a>
+          </li>
+          <li>
+            <a href="http://bluevia.com/ot-www/webroot/index.php/en/page/boilerplate.Privacy">privacy policy</a>
+          </li>
+          <li>
+            <a href="http://bluevia.com/ot-www/webroot/index.php/en/page/boilerplate.Accessibility">accesibility</a>
+          </li>
+        </ul>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/tech">Tech Stuff</a></h4>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.overview">Overview</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.howto">How To</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.APIs">APIs</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.libraries">Libraries</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.bluevialab">BlueVia Lab</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/tech.arduino">Arduino</a>
+            </li>
+        </ul>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/biz">Biz Stuff</a></h4>
+            <li>
+                <a href="https://bluevia.com/en/page/biz.businessmodels">Business Models</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/biz.digitalgoods">Selling Digital Goods</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/biz.getpaid">Get Paid</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/biz.marketingstuff">Marketing Stuff</a>
+            </li>
+            <li>
+                <a href="https://bluevia.com/en/page/biz.wayra">Wayra</a>
+            </li>
+        </ul>
+<ul class="footer_nav span2 unstyled">
+<h4><a href="https://bluevia.com/en/page/inspiration">Inspiration</a></h4>
+            <li>
+                <a id="menu-case" href="https://bluevia.com/en/page/inspiration.appiversary">Appiversary</a>
+            </li>
+            <li>
+                <a id="menu-case" href="https://bluevia.com/en/page/inspiration.facejam">FaceJam</a>
+            </li>
+            <li>
+                <a id="menu-case" href="https://bluevia.com/en/page/inspiration.facetones">Facetones</a>
+            </li>
+            <li>
+                <a id="menu-case" href="https://bluevia.com/en/page/inspiration.textdeck">Textdeck</a>
+            </li>
+            <li>
+                <a id="menu-case" href="https://bluevia.com/en/page/inspiration">More...</a>
+            </li>
+        </ul>
+<ul class="footer_nav span2 unstyled">
+<h4>Support</h4>
+          <li>
+            <a href="https://bluevia.com/en/page/support">contact us</a>
+          </li>
+        </ul>
+</div>
+    </div>
+    <div class="row-fluid">
+
+    </div>
+    <!-- /.site --> </div>
+  <!-- /#footer -->
+</div>
+<script>
+
+  $(".apidoc li > dl > dt").addClass("span3");
+  $(".apidoc dl dl dt").addClass("span4");
+  $(".apimethod dt").addClass("span2");
+  $(".apimethod dd").addClass("offset1");
+
+  // Highlighting current page in the sidebar menu
+  pathname = window.location.pathname;
+  $("a[href='./']").parent().addClass("active");
+  $("a[href='./']").parents(".collapse").collapse("show");
+
+  pathtitle = $("#sidebar a[href='./']")[0];
+
+
+  // Previous and next links
+  menuLinks = $("#sidebar a").not(".accordion-toggle");
+  pageIndex = $(menuLinks).index($(pathtitle));
+
+  prevPageIndex = pageIndex-1;
+  if ( $($(menuLinks)[prevPageIndex]).attr("href") == "./" )
+    prevPageIndex = prevPageIndex - 1;
+  prevPage = $($(menuLinks)[prevPageIndex]).clone();
+
+  nextPageIndex = pageIndex+1;
+  if ( $($(menuLinks)[nextPageIndex]).attr("href") == "./" )
+    nextPageIndex = nextPageIndex + 1;
+  nextPage = $($(menuLinks)[nextPageIndex]).clone();
+
+  $(prevPage).prepend("<< ");
+  $(nextPage).append(" >>");
+
+  $("#prevPage").html($(prevPage));
+  $("#nextPage").html($(nextPage));
+
+  // Breadcrumbs
+  parentGroup = $(pathtitle).parents(".accordion-group");
+  parentCategoryText = $(".accordion-heading a:last",parentGroup)[0];
+  if(parentCategoryText != null) {
+    if($(parentCategoryText).text() != $(pathtitle).text())
+      $(".breadcrumb li.active").before('<li><a href="'+$(parentCategoryText).attr("href")+'">'+$(parentCategoryText).text()+'</a> <span class="divider">/</span></li>');
+  }
+  if (pathtitle != null)
+    $(".breadcrumb .active").text(pathtitle.text);
+
+</script>
+</body>
+</html>

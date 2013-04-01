@@ -1,0 +1,88 @@
+  h1, h2, h3, h4, h5 {
+    color: #006595;
+  }
+  .page-header {
+    background: url("http://www.bluevia.com/img/fileteBottomHeaderUservoice.jpg") repeat-x scroll left bottom transparent;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  .page-footer {
+    background: url(http://www.bluevia.com/img/footerBG.gif) top left repeat-x;
+    padding-top: 10px;
+  }
+  .page-footer h4 {
+    color: #47C3D3;
+    display: block;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .page-footer li {
+    border-bottom: #CCC 1px dotted;
+  }
+  .page-footer li a{
+    font-style: italic;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    list-style: none;
+    display: list-item;
+    line-height: 28px;
+    font-size: 13px;
+    color: #666;
+    text-transform: lowercase;
+    letter-spacing: normal;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+    .page-footer li a:hover{
+      color: #000;
+      text-decoration: none;
+  }
+  a {
+    color: #47c3d3
+  }
+  a:hover {
+    text-decoration: none;
+    color: #006595;
+  }
+  #header .logo img {
+    vertical-align: baseline;
+  }
+  #header .logo span {
+    padding-bottom: 15px;
+  }
+  .accordion-toggle.inline {
+    display: inline-block;
+    background: #eee;
+    margin-right: 10px;
+  }
+.accordion-toggle.inline:hover {
+    background: #e6e6e6;
+  }
+.apidoc dd {
+  display: table-row;
+}
+.apidoc li {
+  list-style: none;
+}
+.apidoc .tab-pane > ul {
+  margin-left: 0px;
+}
+.well.apimethodgroup {
+  background: white;
+}
+.icon-chevron-down {
+  cursor: pointer;
+}
+.bottomLinks {
+  padding-bottom: 20px;
+}
+em {
+  //background: #eef;
+  color: #009;
+  border-bottom: 1px #009 dotted;
+}
