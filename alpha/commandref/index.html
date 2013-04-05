@@ -34,13 +34,17 @@
         </ul>
 <h1 id="bluevia-voice-call-control-commands-reference">BlueVia Voice Call Control Commands Reference</h1>
 
-<p>You have access to a rich set of call control functionality via either XML and JSON call control commands. When you call one of your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Numbers</a>, or make a <a href="../restref/">BlueVia REST API request</a> to create a new call, or modify an existing call, you can specify how to manage the calls behaviour by specifying XML or JSON commands. Calls can be managed by commands via the following mechanisms:</p>
+<p>You have access to a rich set of call control functionality via either XML and JSON call control commands. When you call one of your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Numbers</a>, make a <a href="../restref/">BlueVia REST API request</a> to create a new call or modify an existing call, you can specify how to manage the calls behaviour by specifying XML or JSON commands. Calls can be managed by commands via the following mechanisms:</p>
 
 <ul>
-<li>When your BlueVia Voice Number is called, BlueVia will make a HTTP POST request to the callback URL associated with your number. You can provide Call Control Commands in the HTTP Response body to BlueVia</li>
-  <li>When you make a REST API request to either create a call, when the phone that is being called is answered BlueVia will make a HTTP POST request to the callback URL associated with with the callerId that was provided in the REST API request. NOTE: In the API request you can override the callback URL for your BlueVia Voice Number that you use as the callerId. This will override the callback URL for the present call only. For further detail on this see the <a href="../restref/">BlueVia REST API request</a> @todo update link to actual API section. </li>
-  <li>When you use the <a href="../restref/">/setcommands shortcut</a> @todo update link to actual API section. you can provide either JSON or XML commands in the REST API request body. You can also provide a URL to the XML or JSON commands. BlueVia will then make a HTTP request to the URL to get those commands.</li>
-  <li>Various call events will also result in BlueVia making requests to the callback URLÆs you have configured. BlueVia will make a HTTP POST request to your callback URL providing all event data in the POST request body. You can respond to these notifications with JSON or XML Call Control Commands. To Understand how BlueVia can provide you detail of call notifications to your BlueVia Voice Numbers refer to the <a href="../notifications/">BlueVia Voice Call Event Notification Reference</a>
+<li>
+    <p>When your BlueVia Voice Number is called, BlueVia will make a HTTP POST request to the callback URL associated with your number. You can provide Call Control Commands in the HTTP Response body to BlueVia</p>
+  </li>
+  <li>
+    <p>When you make a REST API request to either create a call or add a call leg then, when the phone that is being called is answered BlueVia will make an HTTP POST request to the callback URL associated with the callerId that was provided in the request. <strong>NOTE</strong>: In the API request you can override the callback URL for your BlueVia Voice Number that you use as the callerId. This will override the callback URL for the present call only. See the <a href="../restref/callcollection/">BlueVia REST API Reference</a> for further details. </p>
+  </li>
+  <li>When you use the <a href="../restref/modifycall/">/setcommands</a> shortcut you can provide either JSON or XML commands in the REST API request body. You can also provide a URL to the XML or JSON commands. BlueVia will then make a HTTP request to the URL to get those commands.</li>
+  <li>Various call events will also result in BlueVia making requests to the callback URL├¡s you have configured. BlueVia will make a HTTP POST request to your callback URL providing all event data in the POST request body. You can respond to these notifications with JSON or XML Call Control Commands. To Understand how BlueVia can provide you detail of call notifications to your BlueVia Voice Numbers refer to the <a href="../notifications/">BlueVia Voice Call Event Notification Reference</a>
 </li>
 </ul>
 <p>The following Call Control Commands can be specified by you:</p>
@@ -56,7 +60,7 @@
   <li><a href="wait/">wait</a></li>
   <li><a href="sms/">sms</a></li>
 </ul>
-<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><hr>
+<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><!-- Known Issues --><hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -123,9 +127,6 @@
                   <a href="../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -171,9 +172,6 @@
                           </li>
                           <li>
                             <a href="../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -253,9 +251,6 @@
                 </li>
                 <li>
                   <a href="getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="record/">Record</a>
                 </li>
                 <li>
                   <a href="hangup/">HangUp</a>

@@ -34,27 +34,19 @@
         </ul>
 <h1 id="known-alpha-limitations">Known Alpha Limitations</h1>
 
-<p>The alpha release of the BlueVia voice APIÆs, as the name suggests, is an alpha! Although there are no usage limitations of the service, there are some functional limitations, that we are addressing and rolling out soon. Please see the <a href="../../roadmap/">BlueVia Voice roadmap</a> for an overview of when our release 1.0 will be available and detail of the further functionality we will be offering soon!</p>
+<p>The alpha release of the BlueVia Voice API’s is, as the name suggests, an alpha! Although there are no usage limitations of the service, there are some functional limitations, that we are addressing and rolling out soon. Please see the <a href="../../roadmap/">BlueVia Voice roadmap</a> for an overview of when our release 1.0 will be available and detail of the further functionality we will be offering soon!</p>
 
 <p>The following provides an overview of immediate limitations that you should be aware of. It’s probably a good idea to give these an initial skim read so you can refer back to them when you start playing with the functionality.</p>
 
 <p>If there is something further, not listed here that is causing you issues, please contact us immediately, so we can see if there is an immediate solution for you, or alternatively so we can turn around a solution for you. As always please send any issues to <a href="mailto:support@bluevia.com">support@bluevia.com</a>, or alternatively <a href="mailto:murray@bluevia.com">murray@bluevia.com</a>. Also follow, and contact us at twitter <a href="http://twitter.com/BlueVia">@BlueVia</a>.</p>
 
-<h2 id="exporting-recordings">Exporting Recordings</h2>
-
-<p>Currently you can only use the <em>export functionality</em> for the <a href="../../commandref/record/">record command</a>. Initially during the alpha we will not be hosting any recordings you make on our servers. For our release 1.0 we will be supporting the hosting of recordings. There are a few things that you should be aware of:</p>
-
-<ul>
-<li>You can only play back the recording you have made when it is available on your server. BlueVia will have to have completed the HTTP POST of your recording to either your server (or as you can see in the <a href="../../commandref/record/">record command</a> description, initially we will also allow you to export your recording to Amazon Web Services S3 storage). This is not a major issue for small recordings, for example the recording of a conference participants name, but immediate playback of longer recordings may be an issue. BlueVia will only POST to the recording to your chosen export location once the recording has been completed. </li>
-  <li>We are going to add a post complete notification to allow developers to know exactly when a recording export has been completed. </li>
-</ul>
 <h2 id="purchasing-numbers">Purchasing Numbers</h2>
 
 <p>For the alpha release of the platform it is not possible to purchase numbers. For the alpha we are giving you numbers in each of our launch countries: </p>
 
 <ul>
 <li>The USA and Canada</li>
-  <li>The UK and</li>
+  <li>The UK</li>
   <li>Germany.</li>
 </ul>
 <p>These numbers are free for your use during the alpha period. Once the alpha has completed these numbers will be charged for, against the balance in your account. Please see the <a href="../pricing/">BlueVia Voice API Costs</a> to see the monthly fees for keeping BlueVia Voice Numbers</p>
@@ -79,6 +71,10 @@
 
 <p>Full resource access within the <a href="../../restref/">BlueVia RESTful API</a> is not available in the alpha release. The limitations within the API are highlighted within the RESTful API reference.</p>
 
+<h2 id="getdigits-command">GetDigits Command</h2>
+
+<p>When using the <a href="../../commandref/getdigits/">GetDigits command</a> any keypad input made while the <a href="../../commandref/speak/">Speak command</a> or <a href="../../commandref/play/">Play command</a> are being executed will NOT interrupt the playback, and the user input will be ignored. A user can only provide IVR inpout when the embedded speak or play commands has completed. This means IVR playback cannot be bypassed by the caller.</p>
+
 <!-- Bluevia  -->
 
 <!-- Overview -->
@@ -97,6 +93,7 @@
 
 <!-- Play -->
 
+<!-- Known Issues -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -165,9 +162,6 @@
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -213,9 +207,6 @@
                           </li>
                           <li>
                             <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -295,9 +286,6 @@
                 </li>
                 <li>
                   <a href="../../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>

@@ -52,17 +52,18 @@
 <div class="apimethodgroup well well-small">
   <dl>
 <dt>GET</dt>
-    <dd>YES - NOTE: not available during the alpha period <i class="icon-chevron-down pull-right"> </i>
-<!-- Remove the "i" block if this method is not available -->
-
-      <ul>
-<li>Provides basic information about your account. A List of the BLueVia Voice Numbers  on your account are provided. Further detail on these numbers can then be retrieved using the GET operation for <a href="../availablenumberscollection/">Account Number Collections</a> and <a href="../accountnumber/">Account Numbers</a>
-</li>
-        <li>Your account information will also contain of the balance left on your account.</li>
-        <li>NOTE: Further detail of this method will be provided when delivered. </li>
-      </ul>
+    <dd>YES</dd>
+    <dd>NOTE: not available during the alpha period <i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available -->
 </dd>
   </dl>
+<ul>
+<li>Provides basic information about your account. A List of the BlueVia Voice Numbers  on your account are provided. Further detail on these numbers can then be retrieved using the GET operation for <a href="../availablenumberscollection/">Account Number Collections</a> and <a href="../accountnumber/">Account Numbers</a>
+      <ul>
+<li>Your account information will also contain of the balance left on your account.</li>
+        <li>NOTE: Further detail of this method will be provided when delivered. </li>
+      </ul>
+</li>
+  </ul>
 <!-- This HTML doesn't need changes --><div class="apidoc collapse tabable offset1" id="getdoc">
     <ul class="nav nav-tabs">
 <li class="active"><a href="#tab1" data-toggle="tab">Request</a></li>
@@ -113,6 +114,8 @@
 <!-- Roadmap -->
 
 <!-- Play -->
+
+<!-- Known Issues -->
 
 
         <hr>
@@ -182,9 +185,6 @@
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -230,9 +230,6 @@
                           </li>
                           <li>
                             <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -312,9 +309,6 @@
                 </li>
                 <li>
                   <a href="../../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>

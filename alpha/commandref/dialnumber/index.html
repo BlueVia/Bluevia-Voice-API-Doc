@@ -36,7 +36,7 @@
 
 <p>The dial number command allows you to add another call leg by means of specifying the number you wish to dial in order to add to a call.</p>
 
-<p>You can specify multiple number commands within the dial command. When one of the numbers is connected the rest are hung up. </p>
+<p><span style="color:#f00">You can specify multiple number commands within the dial command. When one of the numbers is connected the rest are hung up.  <a href="../../knownissues/">Known Issues</a></span></p>
 
 <p><strong>NOTE</strong>: If one of the numbers dialed is a mobile that is diverted to voicemail this will result in a call connection. This will mean that other numbers dialed may not ring at all. It is not possible for BlueVia to determine a call connection is a voice mail connection or not.</p>
 
@@ -129,7 +129,7 @@ Additionally, in this case, when the destination answers the call the <a href=".
 
 <p>This will result in the destination number of +441234567, +442345678 and +443456789 ringing.
 If the destination handset supports the display of the caller ID, in this case the number the callerId of +442012345678 is displayed on the destination terminal.
-In the case of one of the destinations answering the others will stop ringing</p>
+In the case all of the called destinations can join the call.</p>
 
 <h2 id="xml-examples">XML Examples</h2>
 
@@ -209,6 +209,8 @@ In the case of one of the destinations answering the others will stop ringing</p
 
 <!-- Play -->
 
+<!-- Known Issues -->
+
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
@@ -276,9 +278,6 @@ In the case of one of the destinations answering the others will stop ringing</p
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -324,9 +323,6 @@ In the case of one of the destinations answering the others will stop ringing</p
                           </li>
                           <li>
                             <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -406,9 +402,6 @@ In the case of one of the destinations answering the others will stop ringing</p
                 </li>
                 <li>
                   <a href="../getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../record/">Record</a>
                 </li>
                 <li>
                   <a href="../hangup/">HangUp</a>

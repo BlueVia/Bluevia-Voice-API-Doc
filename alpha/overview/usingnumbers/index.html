@@ -36,7 +36,7 @@
 
 <h2 id="inbound-calls">Inbound Calls</h2>
 
-<p>The easiest way to experiment with your BlueVia Numbers is to call them. See what happens. If you then look at your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to see the configuration of your number you can see what happens. Initially associated with all BlueVia Numbers is a default configuration of:</p>
+<p>The easiest way to experiment with your BlueVia Numbers is to call them and see what happens. If you then look at your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to see the configuration of your number you can see what happens. Initially associated with all BlueVia Numbers is a default configuration of:</p>
 
 <pre><code>{
     "commands": [
@@ -64,9 +64,9 @@
 }
 </code></pre>
 
-<p>When you call your number, you will hear the Text To Speech engine speaking in a male voice the text listed within the <a href="../../commandref/speak/">Speak Command</a>. As you can then see the call will hangup due to the <a href="../../commandref/hangup/">Hangup command</a> </p>
+<p>When you call your number, you will hear the Text To Speech engine speaking the text listed within the <a href="../../commandref/speak/">Speak Command</a> in a male voice. As you can then see the call will hangup due to the <a href="../../commandref/hangup/">Hangup command</a> </p>
 
-<p>The easiest way to modify this configuration is to have a look at our <a href="../../quickstart/">BlueVia Voice quick start guide</a>. If you have your own server to play with, you can host your own <a href="../../commandref/">BlueVia Voice Control Commands</a> to alter the behaviour of an inbound call. IF you don’t have immediate access to a server, simply try hosting some static XML of JSON call control commands in a file hosted in a cloud file sharing service. Have a look at the first Quick Start Guide to <a href="../../quickstart/connectcallnocode/">connect an inbound call without any code</a>. This uses a static file hosted on Amazon S3 to manage a call connection.</p>
+<p>The easiest way to modify this configuration is to have a look at our <a href="../../quickstart/">BlueVia Voice quick start guide</a>. If you have your own server to play with, you can host your own <a href="../../commandref/">BlueVia Voice Control Commands</a> to alter the behaviour of an inbound call. If you don’t have immediate access to a server, simply try hosting some static XML of JSON call control commands in a file hosted in a cloud file sharing service. Have a look at the first Quick Start Guide to <a href="../../quickstart/connectcallnocode/">connect an inbound call without any code</a>. This uses a static file hosted on Amazon S3 to manage a call connection.</p>
 
 <h2 id="outbound-calls">Outbound Calls</h2>
 
@@ -90,6 +90,7 @@
 
 <!-- Play -->
 
+<!-- Known Issues -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -158,9 +159,6 @@
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -206,9 +204,6 @@
                           </li>
                           <li>
                             <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -288,9 +283,6 @@
                 </li>
                 <li>
                   <a href="../../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>

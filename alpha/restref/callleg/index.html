@@ -36,176 +36,16 @@
 
 <h2 id="call-leg">Call Leg</h2>
 
-<p>/comms/v1/calls/{callId}/legs/{legId}{format}?QueryParams</p>
+<pre><code>URI Not defined for alpha
+</code></pre>
 
 <div class="apimethodgroup well well-small">
-  <dl>
-<dt>POST</dt>
-    <dd>NOT ALLOWED</dd>
-  </dl>
-<!-- This HTML doesn't need changes -->
-</div>
-<!-- apimethodgroup -->
 
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>GET</dt>
-    <dd>YES</dd>
-  </dl>
-<ul>
-<li>This allows you to request specific information about the call leg represented by the {legId}</li>
-  </ul>
-<p class="apimethod" id="postmethod" data-toggle="collapse" data-target="#getdoc"><i class="icon-chevron-down pull-right"> </i><!-- Remove the "i" block if this method is not available --></p>
+  <p>This allows you to request specific information about the call leg represented by the {legId}</p>
+
   <!-- This HTML doesn't need changes -->
-  <div class="apidoc collapse in tabable offset1" id="postdoc">
-    <ul class="nav nav-tabs">
-<li class="active"><a href="#tab1" data-toggle="tab">Request</a></li>
-      <li><a href="#tab2" data-toggle="tab">Response</a></li>
-  </ul>
-<div class="tab-content">
-<div id="tab1" class="tab-pane active">
-        <ul>
-<li>
-            <dl>
-<dt>Query Parameters:</dt>
-              <dd>
-                <dl>
-<dt>Filter(optional)</dt>
-                  <dd>To apply a filter on the response, i.e.: to retrieve only some fields of the Call Leg. The name of query parameter is fields and itÆs value is a list of comma separated values of the different fields that are requested. The filter can be applied at top level fields within an Call Leg</dd>
-                </dl>
-</dd>
-              <dd>
-                <dl>
-<dt>Example</dt>
-                  <dd><code>?fields=callerId,lastUpdated</code></dd>
-                </dl>
-</dd>
-              <dd>
-                <dl>
-<dt>Note</dt>
-                  <dd>
-<em>legId</em> field is always returned, even if not included in the filter.</dd>
-                </dl>
-</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Body</dt>
-              <dd>The GET does not include a body.</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Example</dt>
-              <dd>
-<strong>CURL</strong>
-
-                <pre><code>  @todo get one
-</code></pre>
-              </dd>
-            </dl>
-</li>
-        </ul>
-</div>
-<div id="tab2" class="tab-pane">
-
-        <ul>
-<li>
-            <p>Successful response</p>
-          </li>
-          <li>
-            <dl>
-<dt>Error response</dt>
-              <dd>HTTP Response : 200 OK.</dd>
-              <dd>
-                <dl>
-<dt>Body</dt>
-                  <dd>The response includes a JSON or an XML body</dd>
-                </dl>
-</dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Example</dt>
-              <dd>
-<strong>JSON</strong>
-
-                <pre><code>{
-      
-          "callLegId":
-        "328482ac-e3a2-4152-8b67-18ba0c84ef33",
-              "callerId": "tel: +34666666669",
-          "destination": "tel: +34666666666",
-          "legStatus": "Answered",
-              "direction": "Outbound",
-          "duration": "110",
-          "callLegCost": {
-              "amount": 6.33,
-            },
-          "createdAt": "2012-05-16T14:00:10",
-          "lastUpdated": "2012-05-16T14:02:00",
-}
-</code></pre>
-              </dd>
-              <dd>
-                <p><strong>XML</strong></p>
-
-                <pre><code>  @todo get one
-</code></pre>
-              </dd>
-            </dl>
-</li>
-          <li>
-            <dl>
-<dt>Error response</dt>
-              <dd>Consists of an HTTP Error response together with a code and an explanatory text. Possible errors are those applicable among the errors described in <a href="../../errorcodes/">BlueVia Voice Error Codes</a>.</dd>
-            </dl>
-</li>
-        </ul>
-</div> <!-- tab2 -->
-</div> <!-- tab-content -->
-</div>
-  <p><!-- apidoc --></p>
 </div>
 <!-- apimethodgroup -->
-
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>PUT</dt>
-    <dd>NOT ALLOWED</dd>
-  </dl>
-<!-- This HTML doesn't need changes -->
-</div>
-<!-- apimethodgroup -->
-
-<div class="apimethodgroup well well-small">
-  <dl>
-<dt>DELETE</dt>
-    <dd>NOT ALLOWED</dd>
-  </dl>
-<!-- This HTML doesn't need changes -->
-</div>
-<!-- apimethodgroup -->
-
-<!-- Bluevia  -->
-
-<!-- Overview -->
-
-<!-- Quick start -->
-
-<!-- Restref -->
-
-<!-- Command ref -->
-
-<!-- Notifications -->
-
-<!-- Error codes  -->
-
-<!-- Roadmap -->
-
-<!-- Play -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -274,9 +114,6 @@
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -322,9 +159,6 @@
                           </li>
                           <li>
                             <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -404,9 +238,6 @@
                 </li>
                 <li>
                   <a href="../../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>

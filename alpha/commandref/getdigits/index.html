@@ -40,20 +40,25 @@
 
 <ul>
 <li>
-<em>actionUrl</em> - the URL that the <a href="../../notifications/">DigitsCollected notification event</a> is sent to.</li>
+    <p><em>actionUrl</em> - the URL that the <a href="../../notifications/">DigitsCollected notification event</a> is sent to.</p>
+  </li>
   <li>
-<em>timeout</em> - positive integer value, default 5 seconds. If the caller doesn’t respond within this time period, a retry is attempted (if specified), or the command completes and you can fall through to a failure (no caller response) case.</li>
+    <p><em>timeout</em> - positive integer value, default 5 seconds. If the caller doesn’t respond within this time period, a retry is attempted (if specified), or the command completes and you can fall through to a failure (no caller response) case.</p>
+  </li>
   <li>
-<em>finishOnKey</em> - any digit, * or #, default #. The key, that if used by the caller will complete the dialpad input from the caller.</li>
+    <p><em>finishOnKey</em> - any digit, * or #, default #. The key, that if used by the caller will complete the dialpad input from the caller.</p>
+  </li>
   <li>
-<em>numberOfDigits</em> - integer value, default of 0. This represents the number of digits to be collected, if set to 0 then there is no limit and the caller must complete DTMF entry via the finishOnKey value. If the caller enters this amount of digits on the dialpad, then the input is completed.</li>
+    <p><em>numberOfDigits</em> - integer value, default of 0. This represents the number of digits to be collected, if set to 0 then there is no limit and the caller must complete DTMF entry via the finishOnKey value. If the caller enters this amount of digits on the dialpad, then the input is completed.</p>
+  </li>
   <li>
-<em>retries</em> - integer value &gt;= 1, default of 1. If the caller doesn’t enter any DTMF input, or they stop entering input before completing the getDigits command then the speak/play command defined within getDigits will be re-executed, and restart the collection of DTMF input from the caller. Any DTMF input entered by the caller during the previous attempt is discarded,  </li>
-  <li>
-<em>validDigits</em> - any digit, * or #, default 1234567890*#, which specifies the valid digits that can be used by the caller when providing dialpad input.
+    <p><em>validDigits</em> - any digit, * or #, default 1234567890*#, which specifies the valid digits that can be used by the caller when providing dialpad input.
 a speak or play command is embeded within the getDigits command. This allows you to let the caller know what to do in order to submit dialpad input.
-following a getDigits command you can specify either a speak or play command that is only used in the event that the caller doesn’t successfully get digits. E.g. if there was a timeout and all the retry attempts have been completed.</li>
+following a getDigits command you can specify either a speak or play command that is only used in the event that the caller doesn’t successfully get digits. E.g. if there was a timeout and all the retry attempts have been completed.</p>
+  </li>
 </ul>
+<p><span style="color:#f00">Digits entered during the playback of Play/Speak content are ignored and playback does not stop. <a href="../../knownissues/">Known Issues</a></span></p>
+
 <h2 id="json-examples">JSON Examples</h2>
 
 <p>The following examples demonstrate how you can use the getDigits command</p>
@@ -68,7 +73,6 @@ following a getDigits command you can specify either a speak or play command tha
     		"getDigits": {
     			"timeout": 5,
     			"numberOfDigits": 1,
-    			"retries": 2,
     			"actionUrl": "http://your.domain.com/yourActionHandler",
     			"speak": {
     				"text": "Press 1 to create a new conference. Press 2 to join an existing conference call.",
@@ -92,7 +96,6 @@ following a getDigits command you can specify either a speak or play command tha
 
     <ul>
 <li>If the caller doesn’t enter any data within the 5 second timeout the speak command will be executed again</li>
-      <li>In this case the number of retries attempted will be 2. In the event the caller has not entered any data for second timeout period the second speak command will be executed. </li>
       <li>
 <em>NOTE</em>: If the caller enters valid input this second speak command will never be executed. The second speak command and the hangup command will only ever be executed if the getDigits command doesn’t result in a HTTP POST request to the actionUrl</li>
       <li>In the case of no input from the caller the call will be terminated via the <a href="../hangup/">hangup command</a>
@@ -159,7 +162,6 @@ following a getDigits command you can specify either a speak or play command tha
         &lt;tns:getDigits&gt;
         	&lt;tns:timeout&gt;5&lt;/tns:timeout&gt;
         	&lt;tns:numberOfDigits&gt;1&lt;/tns:numberOfDigits&gt;
-        	&lt;tns:retries&gt;2&lt;/tns:retries&gt;
         	&lt;tns:actionUrl&gt;http://your.domain.com/yourActionHandler&lt;/tns:actionUrl&gt;
         	&lt;tns:speak&gt;
         		&lt;tns:text&gt;Press 1 to create a new conference. Press 2 to join an existing conference call.&lt;/tns:text&gt;
@@ -211,7 +213,7 @@ following a getDigits command you can specify either a speak or play command tha
 </code></pre>
   </li>
 </ul>
-<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><hr>
+<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><!-- Known Issues --><hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -278,9 +280,6 @@ following a getDigits command you can specify either a speak or play command tha
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -326,9 +325,6 @@ following a getDigits command you can specify either a speak or play command tha
                           </li>
                           <li>
                             <a href="../../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -408,9 +404,6 @@ following a getDigits command you can specify either a speak or play command tha
                 </li>
                 <li>
                   <a href="./">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../record/">Record</a>
                 </li>
                 <li>
                   <a href="../hangup/">HangUp</a>

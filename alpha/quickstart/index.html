@@ -39,22 +39,25 @@
 <p>Some example use cases that can be built with the BlueVia Voice API are as follows:</p>
 
 <ul>
-<li>When a someone calls your BlueVia Voice Number you can specify to collect DTMF input from them. To do this you simply specify some text to be spoken, to tell your Customer what input to provide. In the event that no input was provided by your Customer you can then specify another command to execute on the call, such as specifying some further text to be spoken and redirecting your Customer possibly to some support staff, by dialing a specific service desk number. </li>
-  <li>When you receive an event on one of your numbers you can specify to Dial a number, or a conference, in order to connect your Customer to another call recipient, or a conference call.</li>
-  <li>When a call is connected you can specify some text, asking the caller to leave a message. If the caller responds by leaving a message then the recording is made for you. If however the caller doesn’t leave a message you can provide further text that will be spoken to your Customer.</li>
-  <li>When a call is answered by a Customer you can specify some text to be spoken, followed by connecting a call.</li>
+<li>
+    <p>When a someone calls your BlueVia Voice Number you can collect DTMF input from them. To do this you simply specify text to be spoken that tells your Customer what input to provide. In the event that no input was provided you can then specify another command to execute on the call, such as specifying further text to be spoken and redirecting your Customer to support staff by dialling a specific service desk number.</p>
+  </li>
+  <li>
+    <p>When you receive an event on one of your numbers you can specify a number or a conference to Dial, in order to connect your Customer to another call recipient or an existing conference.</p>
+  </li>
+  <li>
+    <p>When a call is answered by a customer you can specify text to be spoken, followed by connecting a call.</p>
+  </li>
 </ul>
 <p>As you will see the options are limitless, and should you choose to you can build complex IVR applications, or alternatively build the simplest of conference call applications, within 5 minutes - almost zero development experience is required!</p>
 
 <p>The BlueVia Voice API Quick Start Guide is broken up into:</p>
 
 <ul>
-<li>
-<a href="connectcallnocode/">Inbound Calls Quick Start Guide</a> and</li>
-  <li>the <a href="restapicreatecall/">BlueVia Voice RESTful API Quick Start Guide</a>
-</li>
+<li><a href="connectcallnocode/">Inbound Calls Quick Start Guide</a></li>
+  <li><a href="restapicreatecall/">BlueVia Voice RESTful API Quick Start Guide</a></li>
 </ul>
-<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><hr>
+<!-- Bluevia  --><!-- Overview --><!-- Quick start --><!-- Restref --><!-- Command ref --><!-- Notifications --><!-- Error codes  --><!-- Roadmap --><!-- Play --><!-- Known Issues --><hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
         <span id="nextPage" class="bottomLinks pull-right"></span>
 
@@ -121,9 +124,6 @@
                   <a href="confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -169,9 +169,6 @@
                           </li>
                           <li>
                             <a href="../restref/accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../restref/recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -251,9 +248,6 @@
                 </li>
                 <li>
                   <a href="../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../commandref/hangup/">HangUp</a>

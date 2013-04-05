@@ -72,13 +72,14 @@
               <dd>
                 <dl>
 <dt>destination</dt>
-                  <dd>MANDATORY and has to be one of your BlueVia Voice numbers</dd>
+                  <dd>MANDATORY</dd>
+                  <dd>Any telephone number that can accept a voice call.</dd>
                 </dl>
 </dd>
               <dd>
                 <dl>
 <dt>callbackUrl</dt>
-                  <dd>This is optional and can be used to provide a different callback URL, for this call only, compared to the one configured against your BlueVia number. If this is specified BlueVia will make a POST request to this URL, for this call only, for the <a href="../../notifications/">Answered in call event notification</a>
+                  <dd>This is optional and can be used to provide a call specific callback URL different from the one configured against your BlueVia Number. If specified BlueVia will make a POST request to this URL, for this call only, for the <a href="../../notifications/">Answered in call event notification</a>
 </dd>
                 </dl>
 </dd>
@@ -191,7 +192,8 @@ curl -k -H "Accept: application/json" -H "Content-type: application/json" --user
 <div class="apimethodgroup well">
   <dl>
 <dt>GET</dt>
-    <dd>YES - NOTE: not available during the alpha period</dd>
+    <dd>YES</dd>
+    <dd>NOTE: not available during the alpha period</dd>
   </dl>
 </div>
 <!-- apimethodgroup -->
@@ -229,6 +231,8 @@ curl -k -H "Accept: application/json" -H "Content-type: application/json" --user
 <!-- Roadmap -->
 
 <!-- Play -->
+
+<!-- Known Issues -->
 
         <hr>
 <span id="prevPage" class="bottomLinks pull-left"></span>
@@ -297,9 +301,6 @@ curl -k -H "Accept: application/json" -H "Content-type: application/json" --user
                   <a href="../../quickstart/confwithpincode/">A Conference With Pin Code</a>
                 </li>
                 <li>
-                  <a href="../../quickstart/addrecording/">Record Conference Participants Names</a>
-                </li>
-                <li>
                   <a href="../../quickstart/restapicreatecall/">Create A Call With the REST API</a>
                 </li>
                 <li>
@@ -345,9 +346,6 @@ curl -k -H "Accept: application/json" -H "Content-type: application/json" --user
                           </li>
                           <li>
                             <a href="../accountconfigrulescollection/">Account Config Rules Collection</a>
-                          </li>
-                          <li>
-                            <a href="../recordings/">Recordings</a>
                           </li>
                         </ul>
 </li>
@@ -427,9 +425,6 @@ curl -k -H "Accept: application/json" -H "Content-type: application/json" --user
                 </li>
                 <li>
                   <a href="../../commandref/getdigits/">GetDigits</a>
-                </li>
-                <li>
-                  <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>
