@@ -42,7 +42,7 @@
 
 <p>This quick start guide mimics the <a href="../connectcallnocode/">the connect a call without any code</a> quick start guide. The difference is that in this case, instead of dialing your BlueVia Voice Number to start a call, you will instead use the API to instantiate a call. </p>
 
-<p>So configure your BlueVia Voice Number in the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="../connectcallnocode/">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
+<p>So configure your BlueVia Voice Number in the <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to point to same JSON (or XML if you have used XML) that you used in the <a href="../connectcallnocode/">the connect a call without any code</a> quick start guide. As a reminder, this was the JSON you used</p>
 
 <pre><code>{
     "commands": [
@@ -95,7 +95,7 @@ $headers = array(
 <li>
 <em>https://live-api-nv.bluevia.com:10443/comms/v1/calls</em> is the URL for the calls resource. You will make a POST request to this in order to create a call leg.</li>
   <li>
-<em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>
+<em>$accessCredentials = ‘your API key’ . ‘:’ . ‘your secret’;</em> Here you have to add your API key and secret. These can be found on the <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>
 </li>
   <li>As you are providing a JSON body in our request and require a JSON response you have to set the appropriate <em>Content-Type</em> and <em>Accept</em> headers in your POST request</li>
 </ul>
@@ -109,7 +109,7 @@ $bodyContent = "{\"callerId\":\"tel:+&lt;your BlueVia Phone Number\",\"destinati
 <p>In this case, as with the <a href="../connectcallnocode/">the connect a call without any code</a> quick start guide:</p>
 
 <ul>
-<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>.</li>
+<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>.</li>
   <li>The Number format is always in international dialing format *tel:+<country code=""><bluevia voice="" number="">*. 
 </bluevia></country><ul>
 <li>Remember to include the <em>tel:+</em> prefix</li>
@@ -382,6 +382,9 @@ curl_close($ch);
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>
+                </li>
+                <li>
+				   <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/redirect/">Redirect</a>

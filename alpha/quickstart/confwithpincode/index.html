@@ -57,7 +57,7 @@
 <em>eventHandler.php</em> and</li>
   <li><em>startConfernece.php</em></li>
 </ol>
-<p>Update the configuration of the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Number</a> to point to the location where you host <em>PincodeConference.php</em>. This is the starting location for this demo. After you have configured your BlueVia Voice Number and you dial it, BlueVia will make a HTTP POST request to the URL pointing to <em>PincodeConference.php</em>.The HTTP POST will contain notification information in the body of the request. Detail of the <a href="../../notifications/">BlueVia Voice Call Notifications</a> at this stage is not important, other than we are expecting to receive a <em>CalledNumber</em> notification type. In fact in this case it is the only notification we will retrieve.</p>
+<p>Update the configuration of the <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Voice Number</a> to point to the location where you host <em>PincodeConference.php</em>. This is the starting location for this demo. After you have configured your BlueVia Voice Number and you dial it, BlueVia will make a HTTP POST request to the URL pointing to <em>PincodeConference.php</em>.The HTTP POST will contain notification information in the body of the request. Detail of the <a href="../../notifications/">BlueVia Voice Call Notifications</a> at this stage is not important, other than we are expecting to receive a <em>CalledNumber</em> notification type. In fact in this case it is the only notification we will retrieve.</p>
 
 <p>So in the following case the first thing you do is get the notification detail from the HTTP POST Request from BlueVia. So in <em>PincodeConference.php</em>:</p>
 
@@ -478,6 +478,9 @@ if ($eventName == "CalledNumber") {
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>
+                </li>
+                <li>
+				   <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/redirect/">Redirect</a>

@@ -38,21 +38,11 @@
 
 <p>This is the simplest demo possible, as it requires no development experience at all. In this demo you will connect two phones on a call - phone A and phone B. Phone A will be used to dial your BlueVia Voice Number and phone B will be added to the call, such that phone A and phone B can speak to each other.</p>
 
-<p>You will need access to host a file on a web server accessible from the open internet. For this demo we have chosen to use <a href="http://aws.amazon.com">Amazon Web Services S3</a> simply because it’s easy! Other cloud based storage facilities are available :-). The static file has to be able to be served as JSON or XML though, which is why you <strong>won’t be able to host this</strong> on services such as <em>Google Drive</em> or <em>DropBox</em> (unless you already have a Public folder in your Dropbox account. Note Public folders have been disabled for new accounts). The Public folders in, newer Dropbox accounts - since October 4th 2012, do not let you serve static XML and JSON files directly to the BlueVia Voice API. Instead they provide a link to a Dropbox hosted web page such that you can then download a static file. This is not usable by the BlueVia Voice API</p>
+<p>You will need access to host a file on a web server accessible from the open internet. For this demo we have chosen to use <a href="http://www.dropbox.com">Dropbox</a> simply because it’s easy! Other cloud based storage facilities are available :-). </p>
 
-<p>If you wish to use Amazon Web Services, you will need to create an AWS account, if you do not have one. Once this is done head to your <a href="https://console.aws.amazon.com/console/home">Amazon AWS Console</a>.</p>
+<p><strong>NOTE</strong> You will only be able to use Dropbox if you have access to a public folder that can serve content as JSON or XML. Note Public folders have been disabled for new Dropbox accounts. The Public folders in, newer Dropbox accounts - since October 4th 2012, do not let you serve static XML and JSON files directly to the BlueVia Voice API. Instead they provide a link to a Dropbox hosted web page such that you can then download a static file. This is not usable by the BlueVia Voice API. If you don’t have access to a public Dropbox folder you will need to host the command file elsewhere. The static file has to be able to be served as JSON or XML though, which is why you <strong>won’t be able to host this</strong> on services such as <em>Google Drive</em></p>
 
-<ul>
-<li>Select S3 from the list of services</li>
-  <li>Create a bucket in the AWS S3 Console and open the bucket</li>
-  <li>Then edit, where highlighted, the JSON below and add to a file with a “.JSON” extension e.g. <em>connect-call.json</em>. </li>
-  <li>upload this JSON file to your Amazon S3 bucket by selecting the ‘Upload’ button in the AWS console (once you have opened the bucket you have created).</li>
-  <li>Once the JSON file is uploaded, right click on the file, in the AWS console, and select the ‘Make Public’ option.</li>
-  <li>Select ‘Yes’ when asked if you are sure!</li>
-  <li>Once the file has successfully been made public, right click on the file again and select the ‘Properties’ option - this will then show you the link to the JSON file.</li>
-  <li>This file will now be accessible on the open web, and therefore by the BlueVia Voice APIs</li>
-</ul>
-<p>So the JSON file that you need to create, i.e. the content of <em>connect-call.json</em>, that is uploaded into your AWS S3 bucket, is as follows:</p>
+<p>Create the following JSON content in a file and save as <em>connect-call.json</em>, </p>
 
 <pre><code>{
     "commands": [
@@ -71,16 +61,18 @@
 <p><strong>NOTE:</strong> </p>
 
 <ul>
-<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>.</li>
+<li>The callerId telephone number MUST be one of the BlueVia Voice Numbers. You can find a number to use by accessing your <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a>.</li>
   <li>The Number format is always in international dialing format <em>tel:+country code - BlueVia Voice Number</em>. </li>
   <li>Remember to include the <em>tel:+</em> prefix</li>
   <li>The destination number is the number you wish to connect to, i.e. Phone B - the number that you will add to the call. Remembering phone A is used to call your BlueVia Voice Number.</li>
   <li>The Destination number has the same international format as the callerId attribute i.e. <em>tel:+country code - Phone number you wish to add to the call</em>
 </li>
 </ul>
-<p>Once you have the web accessible link of the file <em>connect-call.json</em>, you then have to update you BlueVia Voice numbers configuration such that the callback URL refers to the URL to the JSON file in your AWS S3 bucket. </p>
+<p>Place <em>connect-call.json</em> in you Public <a href="http://www.dropbox.com">Dropbox</a> folder, or host elsewhere, and find the publicly accessible link to the file by signing into your <a href="http://www.dropbox.com">Dropbox</a> account and navigating to the file. Right click on the file and select ‘Copy Public Link’. You can now use this to configure your BlueVia number.</p>
 
-<p>Go to the <a href="https://nv.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to and select the BlueVia Voice Number you wish to update. Copy and paste the URL to <em>connect-call.json</em>  into the callback URL for the number and save the updated configuration.</p>
+<p>Once you have the web accessible link of the file <em>connect-call.json</em>, you then have to update you BlueVia Voice numbers configuration such that the callback URL refers to the URL to the JSON file in your <a href="http://www.dropbox.com">Dropbox</a> Public folder, or where ever you have hosted the file. </p>
+
+<p>Go to the <a href="https://www.bluevia.com/en/communication/your-purchased-numbers">BlueVia Dashboard</a> to and select the BlueVia Voice Number you wish to update. Copy and paste the URL to <em>connect-call.json</em>  into the callback URL for the number and save the updated configuration.</p>
 
 <p>The call the BlueVia Voice Number. Your B Phone should start ringing.</p>
 
@@ -306,6 +298,9 @@
                 </li>
                 <li>
                   <a href="../../commandref/hangup/">HangUp</a>
+                </li>
+                <li>
+				   <a href="../../commandref/record/">Record</a>
                 </li>
                 <li>
                   <a href="../../commandref/redirect/">Redirect</a>
